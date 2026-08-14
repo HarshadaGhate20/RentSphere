@@ -1,0 +1,628 @@
+.tenant-payment-receipt-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.tenant-receipt-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(900px, 100%);
+  margin: 0 auto 20px;
+}
+
+.tenant-receipt-toolbar > div {
+  display: flex;
+  gap: 10px;
+}
+
+.tenant-receipt-toolbar button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  color: #334155;
+  background: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tenant-receipt-toolbar > div button:last-child {
+  border-color: #2563eb;
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.tenant-payment-receipt {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 38px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 24px 65px rgba(15, 23, 42, 0.1);
+}
+
+.tenant-receipt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.tenant-receipt-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tenant-receipt-brand > div {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  font-size: 21px;
+}
+
+.tenant-receipt-brand span,
+.tenant-receipt-brand strong,
+.tenant-receipt-brand small {
+  display: block;
+}
+
+.tenant-receipt-brand strong {
+  font-size: 20px;
+}
+
+.tenant-receipt-brand small {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 9px;
+}
+
+.tenant-receipt-title {
+  text-align: right;
+}
+
+.tenant-receipt-title span {
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-receipt-title h1 {
+  margin: 4px 0 0;
+  font-size: 32px;
+  letter-spacing: 0.08em;
+}
+
+.tenant-receipt-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  background: #f0fdf4;
+}
+
+.tenant-receipt-status > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #16a34a;
+}
+
+.tenant-receipt-status svg {
+  font-size: 23px;
+}
+
+.tenant-receipt-status span,
+.tenant-receipt-status span strong,
+.tenant-receipt-status span small {
+  display: block;
+}
+
+.tenant-receipt-status span strong {
+  color: #166534;
+  font-size: 12px;
+}
+
+.tenant-receipt-status span small {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 8px;
+}
+
+.tenant-receipt-status > strong {
+  color: #16a34a;
+  font-size: 26px;
+}
+
+.tenant-receipt-reference-grid,
+.tenant-receipt-booking-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.tenant-receipt-reference-grid > div,
+.tenant-receipt-booking-details > div {
+  min-width: 0;
+  padding: 14px;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.tenant-receipt-reference-grid span,
+.tenant-receipt-reference-grid strong,
+.tenant-receipt-booking-details span,
+.tenant-receipt-booking-details strong {
+  display: block;
+}
+
+.tenant-receipt-reference-grid span,
+.tenant-receipt-booking-details span {
+  color: #94a3b8;
+  font-size: 7px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tenant-receipt-reference-grid strong,
+.tenant-receipt-booking-details strong {
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.tenant-receipt-property {
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  gap: 18px;
+  align-items: center;
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 17px;
+  background: #f8fafc;
+}
+
+.tenant-receipt-property img {
+  width: 155px;
+  height: 108px;
+  border-radius: 13px;
+  object-fit: cover;
+}
+
+.tenant-receipt-property > div > span {
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-receipt-property h2 {
+  margin: 7px 0;
+  font-size: 21px;
+}
+
+.tenant-receipt-property p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.tenant-receipt-parties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.tenant-receipt-parties article {
+  padding: 17px;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+}
+
+.tenant-receipt-parties span {
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-receipt-parties h3 {
+  margin: 7px 0;
+  font-size: 16px;
+}
+
+.tenant-receipt-parties p {
+  margin: 0;
+  color: #64748b;
+  font-size: 9px;
+}
+
+.tenant-receipt-payment-table {
+  overflow: hidden;
+  margin-top: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.tenant-receipt-payment-table > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tenant-receipt-payment-table > div:last-child {
+  border-bottom: 0;
+}
+
+.tenant-receipt-payment-heading {
+  min-height: 45px !important;
+  color: #ffffff;
+  background: #0f172a;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-receipt-payment-table > div:not(
+    .tenant-receipt-payment-heading
+  ) span {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.tenant-receipt-payment-table strong {
+  font-size: 12px;
+}
+
+.tenant-receipt-total {
+  min-height: 76px !important;
+  background: #eff6ff;
+}
+
+.tenant-receipt-total span {
+  color: #1e3a8a !important;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-receipt-total strong {
+  color: #2563eb;
+  font-size: 24px;
+}
+
+.tenant-receipt-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #bfdbfe;
+  border-radius: 15px;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.tenant-receipt-note svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 19px;
+}
+
+.tenant-receipt-note strong {
+  display: block;
+  color: #1e3a8a;
+  font-size: 10px;
+}
+
+.tenant-receipt-note p {
+  margin: 5px 0 0;
+  color: #475569;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.tenant-receipt-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 9px;
+}
+
+.tenant-receipt-footer p {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tenant-receipt-bottom-actions {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+  width: min(900px, 100%);
+  margin: 20px auto 0;
+}
+
+.tenant-receipt-bottom-actions a {
+  display: inline-flex;
+  min-height: 45px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-radius: 11px;
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tenant-receipt-bottom-actions a:first-child {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.tenant-receipt-bottom-actions a:last-child {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.tenant-receipt-not-found {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  color: #64748b;
+  text-align: center;
+}
+
+.tenant-receipt-not-found > svg {
+  color: #2563eb;
+  font-size: 48px;
+}
+
+.tenant-receipt-not-found h2 {
+  margin: 14px 0 7px;
+  color: #0f172a;
+}
+
+.tenant-receipt-not-found p {
+  margin: 0 0 18px;
+}
+
+.tenant-receipt-not-found a,
+.tenant-receipt-not-found button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 11px;
+  color: #ffffff;
+  background: #2563eb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .tenant-payment-receipt-page {
+    padding: 18px 12px;
+  }
+
+  .tenant-receipt-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .tenant-receipt-toolbar > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tenant-payment-receipt {
+    padding: 24px 16px;
+  }
+
+  .tenant-receipt-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tenant-receipt-title {
+    text-align: left;
+  }
+
+  .tenant-receipt-reference-grid,
+  .tenant-receipt-booking-details,
+  .tenant-receipt-parties {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-receipt-property {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-receipt-property img {
+    width: 100%;
+    height: 210px;
+  }
+
+  .tenant-receipt-footer,
+  .tenant-receipt-bottom-actions {
+    flex-direction: column;
+  }
+
+  .tenant-receipt-bottom-actions a {
+    width: 100%;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide the complete dashboard layout */
+  .dashboard-sidebar,
+  .sidebar,
+  .dashboard-header,
+  .dashboard-topbar,
+  .tenant-sidebar,
+  .landlord-sidebar,
+  nav,
+  aside,
+  header:not(.tenant-receipt-header),
+  .tenant-receipt-toolbar,
+  .tenant-receipt-bottom-actions {
+    display: none !important;
+  }
+
+  /* Remove sidebar spacing from the dashboard content */
+  .dashboard-layout,
+  .dashboard-content,
+  .dashboard-main,
+  .main-content,
+  .page-content,
+  .layout-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .tenant-payment-receipt-page {
+    display: block !important;
+    width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+  }
+
+  .tenant-payment-receipt {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 12mm !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .tenant-receipt-header,
+  .tenant-receipt-status,
+  .tenant-receipt-reference-grid,
+  .tenant-receipt-property,
+  .tenant-receipt-parties,
+  .tenant-receipt-booking-details,
+  .tenant-receipt-payment-table,
+  .tenant-receipt-note,
+  .tenant-receipt-footer {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Compact the receipt so it fits on one A4 page */
+  .tenant-receipt-header {
+    padding-bottom: 12px !important;
+  }
+
+  .tenant-receipt-status,
+  .tenant-receipt-reference-grid,
+  .tenant-receipt-property,
+  .tenant-receipt-parties,
+  .tenant-receipt-booking-details,
+  .tenant-receipt-payment-table,
+  .tenant-receipt-note {
+    margin-top: 12px !important;
+  }
+
+  .tenant-receipt-reference-grid > div,
+  .tenant-receipt-booking-details > div {
+    padding: 9px !important;
+  }
+
+  .tenant-receipt-property {
+    padding: 10px !important;
+  }
+
+  .tenant-receipt-property img {
+    width: 120px !important;
+    height: 82px !important;
+  }
+
+  .tenant-receipt-parties article {
+    padding: 10px !important;
+  }
+
+  .tenant-receipt-payment-table > div {
+    min-height: 42px !important;
+    padding: 0 12px !important;
+  }
+
+  .tenant-receipt-total {
+    min-height: 52px !important;
+  }
+
+  .tenant-receipt-note {
+    padding: 10px !important;
+  }
+
+  .tenant-receipt-footer {
+    margin-top: 14px !important;
+    padding-top: 10px !important;
+  }
+
+  a,
+  button {
+    display: none !important;
+  }
+}

@@ -1,0 +1,533 @@
+.tenant-lease-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #0f172a;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.1),
+      transparent 32%
+    ),
+    #f8fafc;
+}
+
+/* Header */
+
+.tenant-lease-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 28px 30px;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #eff6ff
+    );
+  box-shadow:
+    0 18px 45px
+    rgba(15, 23, 42, 0.08);
+}
+
+.tenant-lease-header > div:first-child > span {
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tenant-lease-header h1 {
+  margin: 8px 0;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.tenant-lease-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.tenant-lease-header-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 20px;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #38bdf8
+    );
+  font-size: 25px;
+}
+
+/* Lease Card */
+
+.tenant-lease-list {
+  display: grid;
+  gap: 24px;
+}
+
+.tenant-lease-card {
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow:
+    0 18px 45px
+    rgba(15, 23, 42, 0.08);
+}
+
+/* Property */
+
+.tenant-lease-property {
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #f8fafc;
+}
+
+.tenant-lease-property-image {
+  position: relative;
+  min-height: 260px;
+}
+
+.tenant-lease-property-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+}
+
+.tenant-lease-active-status {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #166534;
+  background: rgba(220, 252, 231, 0.96);
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-lease-property-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px;
+}
+
+.tenant-lease-property-body > span {
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-lease-property-body h2 {
+  margin: 10px 0 8px;
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.tenant-lease-property-body > p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.tenant-lease-property-actions {
+  display: flex;
+  gap: 11px;
+  margin-top: 23px;
+}
+
+.tenant-lease-property-actions a {
+  display: inline-flex;
+  min-height: 44px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 11px;
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tenant-lease-property-actions a:first-child {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.tenant-lease-property-actions a:last-child {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+/* Status */
+
+.tenant-lease-status-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 20px;
+  padding: 17px;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  color: #16a34a;
+  background: #f0fdf4;
+}
+
+.tenant-lease-status-banner > svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 21px;
+}
+
+.tenant-lease-status-banner strong {
+  display: block;
+  color: #166534;
+  font-size: 12px;
+}
+
+.tenant-lease-status-banner p {
+  margin: 5px 0 0;
+  color: #475569;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* Details */
+
+.tenant-lease-details-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tenant-lease-details-grid > div {
+  padding: 17px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.tenant-lease-details-grid svg {
+  margin-bottom: 12px;
+  color: #2563eb;
+  font-size: 19px;
+}
+
+.tenant-lease-details-grid span,
+.tenant-lease-details-grid strong {
+  display: block;
+}
+
+.tenant-lease-details-grid span {
+  color: #94a3b8;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tenant-lease-details-grid strong {
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+/* Sections */
+
+.tenant-lease-financials,
+.tenant-lease-landlord,
+.tenant-lease-terms {
+  margin-top: 20px;
+  padding: 21px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+}
+
+.tenant-lease-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tenant-lease-section-heading > div {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 14px;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #38bdf8
+    );
+  font-size: 18px;
+}
+
+.tenant-lease-section-heading small,
+.tenant-lease-section-heading strong {
+  display: block;
+}
+
+.tenant-lease-section-heading small {
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-lease-section-heading strong {
+  margin-top: 4px;
+  font-size: 17px;
+}
+
+.tenant-lease-payment-grid,
+.tenant-lease-landlord-details {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 18px;
+}
+
+.tenant-lease-payment-grid > div,
+.tenant-lease-landlord-details > div {
+  min-width: 0;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.tenant-lease-payment-grid span,
+.tenant-lease-payment-grid strong,
+.tenant-lease-landlord-details span,
+.tenant-lease-landlord-details strong {
+  display: block;
+}
+
+.tenant-lease-payment-grid span,
+.tenant-lease-landlord-details span {
+  color: #94a3b8;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.tenant-lease-payment-grid strong,
+.tenant-lease-landlord-details strong {
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+
+.tenant-lease-paid-status {
+  color: #16a34a;
+}
+
+/* Terms */
+
+.tenant-lease-terms h3 {
+  margin: 0 0 17px;
+  font-size: 18px;
+}
+
+.tenant-lease-terms > div {
+  display: grid;
+  gap: 11px;
+}
+
+.tenant-lease-terms p {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0;
+  color: #475569;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.tenant-lease-terms p svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+  color: #16a34a;
+}
+
+/* Actions */
+
+.tenant-lease-actions {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.tenant-lease-actions button,
+.tenant-lease-actions a {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 12px;
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tenant-lease-actions button:first-child {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.tenant-lease-actions a {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+.tenant-lease-actions button:last-child {
+  color: #7c3aed;
+  background: #f3e8ff;
+}
+
+/* Empty */
+
+.tenant-lease-empty {
+  padding: 75px 24px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 22px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.tenant-lease-empty > svg {
+  color: #2563eb;
+  font-size: 50px;
+}
+
+.tenant-lease-empty h2 {
+  margin: 16px 0 8px;
+}
+
+.tenant-lease-empty p {
+  max-width: 520px;
+  margin: 0 auto 22px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.tenant-lease-empty > div {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+}
+
+.tenant-lease-empty a {
+  display: inline-flex;
+  min-height: 45px;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 11px;
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tenant-lease-empty a:first-child {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.tenant-lease-empty a:last-child {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+  .tenant-lease-property {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-lease-property-image,
+  .tenant-lease-property-image img {
+    min-height: 320px;
+  }
+
+  .tenant-lease-details-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .tenant-lease-page {
+    padding: 18px 14px;
+  }
+
+  .tenant-lease-header-icon {
+    display: none;
+  }
+
+  .tenant-lease-card {
+    padding: 15px;
+  }
+
+  .tenant-lease-property-body {
+    padding: 20px;
+  }
+
+  .tenant-lease-property-actions,
+  .tenant-lease-actions,
+  .tenant-lease-empty > div {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-lease-payment-grid,
+  .tenant-lease-landlord-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .tenant-lease-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-lease-property-image,
+  .tenant-lease-property-image img {
+    min-height: 220px;
+  }
+}

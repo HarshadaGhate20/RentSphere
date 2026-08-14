@@ -1,0 +1,147 @@
+.navbar{
+    padding:15px 0;
+}
+
+.nav-link{
+    margin:0 10px;
+    font-weight:500;
+    color:#0F172A !important;
+}
+
+.nav-link:hover{
+    color:#2563EB !important;
+}
+
+.navbar-brand{
+    color:#2563EB !important;
+}
+
+.public-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.public-navbar-container {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(1440px, 92%);
+  margin: 0 auto;
+}
+
+.public-navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #2563eb;
+  font-size: 25px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.public-navbar-brand svg {
+  font-size: 27px;
+}
+
+.public-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.public-navbar-links a {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.public-navbar-links a:hover,
+.public-navbar-links a.active {
+  color: #2563eb;
+}
+
+.public-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.public-login-button,
+.public-register-button,
+.public-dashboard-button,
+.public-logout-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 15px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.public-login-button {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  background: #ffffff;
+}
+
+.public-register-button {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.public-dashboard-button {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8
+  );
+}
+
+.public-logout-button {
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+@media (max-width: 900px) {
+  .public-navbar-container {
+    flex-wrap: wrap;
+    padding: 14px 0;
+  }
+
+  .public-navbar-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .public-navbar-brand span {
+    font-size: 20px;
+  }
+
+  .public-dashboard-button span {
+    display: none;
+  }
+
+  .public-navbar-links {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}

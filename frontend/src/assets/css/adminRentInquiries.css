@@ -1,0 +1,886 @@
+.inquiries-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #0f172a;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.09),
+      transparent 28%
+    ),
+    #f8fafc;
+}
+
+.inquiries-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.inquiries-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.inquiries-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(31px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.inquiries-header p {
+  max-width: 700px;
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.inquiries-header-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 21px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  font-size: 26px;
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.25);
+}
+
+.inquiries-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.inquiry-summary-card {
+  min-height: 175px;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 21px;
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+}
+
+.inquiry-summary-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.inquiry-summary-top > span {
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.inquiry-summary-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border-radius: 16px;
+  font-size: 20px;
+}
+
+.inquiry-summary-icon.total {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.inquiry-summary-icon.active {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.inquiry-summary-icon.closed {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.inquiry-summary-icon.cancelled {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.inquiry-summary-card > strong {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.inquiry-summary-card > small {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.inquiries-content-card {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 23px;
+  background: #ffffff;
+  box-shadow: 0 17px 43px rgba(15, 23, 42, 0.07);
+}
+
+.inquiries-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.inquiries-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.inquiries-tabs button {
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  color: #475569;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.inquiries-tabs button.active {
+  border-color: #2563eb;
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.inquiries-search {
+  display: flex;
+  width: 320px;
+  min-height: 46px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+  background: #f8fafc;
+}
+
+.inquiries-search input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+}
+
+.inquiries-list {
+  display: grid;
+}
+
+.inquiry-card {
+  display: grid;
+  grid-template-columns:
+    minmax(250px, 1.35fr)
+    minmax(145px, 0.75fr)
+    minmax(145px, 0.75fr)
+    minmax(130px, 0.65fr)
+    auto
+    auto;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.inquiry-card:last-child {
+  border-bottom: 0;
+}
+
+.inquiry-property {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.inquiry-property img {
+  width: 72px;
+  height: 65px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.inquiry-id {
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.inquiry-property h3 {
+  margin: 4px 0;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.inquiry-property p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.inquiry-person span,
+.inquiry-person strong,
+.inquiry-person small,
+.inquiry-offer span,
+.inquiry-offer strong,
+.inquiry-offer small {
+  display: block;
+}
+
+.inquiry-person span,
+.inquiry-offer span {
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.inquiry-person strong,
+.inquiry-offer strong {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.inquiry-person small,
+.inquiry-offer small {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.inquiry-status {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.inquiry-status.active {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.inquiry-status.closed {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.inquiry-status.cancelled {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.inquiry-view-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 10px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.inquiries-empty {
+  padding: 60px 20px;
+  color: #64748b;
+  text-align: center;
+}
+
+.inquiries-empty svg {
+  margin-bottom: 12px;
+  color: #2563eb;
+  font-size: 38px;
+}
+
+.inquiries-empty h3 {
+  color: #0f172a;
+}
+
+.inquiry-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 4500;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.inquiry-modal {
+  position: relative;
+  width: min(980px, 100%);
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  border-radius: 25px;
+  background: #ffffff;
+  box-shadow: 0 35px 90px rgba(15, 23, 42, 0.35);
+}
+
+.inquiry-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 4;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.inquiry-modal-header {
+  display: grid;
+  grid-template-columns: 130px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.inquiry-modal-header img {
+  width: 130px;
+  height: 100px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.inquiry-modal-header > div > span {
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.inquiry-modal-header h2 {
+  margin: 5px 0;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.inquiry-modal-header p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #64748b;
+}
+
+.inquiry-modal-body {
+  padding: 25px;
+}
+
+.inquiry-parties-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.inquiry-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.inquiry-profile-icon {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 14px;
+  color: #ffffff;
+}
+
+.inquiry-profile-icon.tenant {
+  background: #2563eb;
+}
+
+.inquiry-profile-icon.landlord {
+  background: #0f766e;
+}
+
+.inquiry-profile-card span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.inquiry-profile-card h3 {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.inquiry-profile-card p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 4px 0;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.inquiry-rent-comparison {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.inquiry-rent-comparison div {
+  padding: 15px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.inquiry-rent-comparison span,
+.inquiry-rent-comparison strong {
+  display: block;
+}
+
+.inquiry-rent-comparison span {
+  color: #64748b;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.inquiry-rent-comparison strong {
+  margin-top: 6px;
+  font-size: 15px;
+}
+
+.inquiry-message-section,
+.inquiry-negotiation-section,
+.inquiry-cancellation-reason {
+  margin-top: 24px;
+}
+
+.inquiry-message-section h3,
+.inquiry-negotiation-section h3,
+.inquiry-cancellation-reason h3 {
+  margin-bottom: 12px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.inquiry-message-section p,
+.inquiry-cancellation-reason p {
+  padding: 16px;
+  border-radius: 14px;
+  color: #475569;
+  background: #f8fafc;
+  line-height: 1.7;
+}
+
+.negotiation-timeline {
+  display: grid;
+  gap: 12px;
+}
+
+.negotiation-message {
+  max-width: 78%;
+  padding: 15px;
+  border-radius: 16px;
+}
+
+.negotiation-message.tenant {
+  justify-self: start;
+  border-bottom-left-radius: 4px;
+  background: #eff6ff;
+}
+
+.negotiation-message.landlord {
+  justify-self: end;
+  border-bottom-right-radius: 4px;
+  background: #ecfdf5;
+}
+
+.negotiation-message > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.negotiation-message > div:first-child span {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.negotiation-message p {
+  margin: 9px 0;
+  color: #475569;
+  font-size: 13px;
+}
+
+.negotiation-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.negotiation-footer strong {
+  color: #2563eb;
+}
+
+.negotiation-footer small {
+  color: #94a3b8;
+}
+
+.inquiry-cancellation-reason p {
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+.inquiry-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.inquiry-modal-actions button {
+  min-height: 47px;
+  flex: 1;
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+@media (max-width: 1200px) {
+  .inquiries-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .inquiries-list {
+    overflow-x: auto;
+  }
+
+  .inquiry-card {
+    min-width: 1000px;
+  }
+}
+
+@media (max-width: 760px) {
+  .inquiries-page {
+    padding: 18px 14px;
+  }
+
+  .inquiries-header {
+    align-items: flex-start;
+  }
+
+  .inquiries-header-icon {
+    display: none;
+  }
+
+  .inquiries-summary-grid,
+  .inquiry-parties-grid,
+  .inquiry-rent-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .inquiries-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .inquiries-search {
+    width: 100%;
+  }
+
+  .inquiry-modal-header {
+    grid-template-columns: 1fr;
+  }
+
+  .inquiry-modal-header img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .negotiation-message {
+    max-width: 95%;
+  }
+
+  .inquiry-modal-actions {
+    flex-direction: column;
+  }
+}
+
+.inquiry-summary-icon.flagged {
+  color: #c2410c;
+  background: #ffedd5;
+}
+
+.inquiry-status.resolved {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.inquiry-card.flagged-card {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 247, 237, 0.95),
+    #ffffff 28%
+  );
+  box-shadow: inset 4px 0 0 #f97316;
+}
+
+.inquiry-reference-row,
+.inquiry-modal-reference {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.inquiry-flag-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #c2410c;
+  background: #ffedd5;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.inquiry-warning-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 20px;
+  padding: 16px;
+  border: 1px solid #fed7aa;
+  border-radius: 14px;
+  color: #c2410c;
+  background: #fff7ed;
+}
+
+.inquiry-warning-banner > svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.inquiry-warning-banner strong,
+.inquiry-warning-banner span {
+  display: block;
+}
+
+.inquiry-warning-banner span {
+  margin-top: 4px;
+  color: #9a3412;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.inquiry-resolution-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.inquiry-resolution-note strong,
+.inquiry-resolution-note span {
+  display: block;
+}
+
+.inquiry-resolution-note span {
+  margin-top: 3px;
+  color: #166534;
+  font-size: 11px;
+}
+
+.inquiry-modal-actions {
+  display: flex;
+  gap: 11px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.inquiry-modal-actions button {
+  display: inline-flex;
+  min-height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 150px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.inquiry-resolve-action {
+  color: #ffffff;
+  background: #22c55e;
+}
+
+.inquiry-flag-action {
+  color: #ffffff;
+  background: #f97316;
+}
+
+.inquiry-remove-flag-action {
+  color: #c2410c;
+  background: #ffedd5;
+}
+
+.inquiry-dismiss-action {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+@media (max-width: 700px) {
+  .inquiry-modal-actions {
+    flex-direction: column;
+  }
+
+  .inquiry-modal-actions button {
+    width: 100%;
+  }
+}
+
+/* ================================
+   Modal Action Buttons
+================================ */
+
+.inquiry-modal-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.inquiry-modal-actions button {
+  min-width: 180px;
+  height: 50px;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+
+/* Resolve */
+
+.inquiry-resolve-action {
+  background: #22c55e;
+  color: #fff;
+}
+
+.inquiry-resolve-action:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+/* Flag */
+
+.inquiry-flag-action {
+  background: #f97316;
+  color: #fff;
+}
+
+.inquiry-flag-action:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+/* Remove Flag */
+
+.inquiry-remove-flag-action {
+  background: #ef4444;
+  color: #fff;
+}
+
+.inquiry-remove-flag-action:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Close */
+
+.inquiry-dismiss-action {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.inquiry-dismiss-action:hover {
+  background: #cbd5e1;
+  color: #0f172a;
+  transform: translateY(-2px);
+}
+
+/* Force Close Details button styling */
+
+.inquiry-modal-actions .inquiry-dismiss-action {
+  background: #e2e8f0 !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.inquiry-modal-actions .inquiry-dismiss-action:hover {
+  background: #cbd5e1 !important;
+  color: #0f172a !important;
+}

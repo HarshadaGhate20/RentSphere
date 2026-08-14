@@ -1,0 +1,596 @@
+/* =========================================================
+   Tenant Payment Page
+========================================================= */
+
+.tenant-payment-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #0f172a;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.12),
+      transparent 32%
+    ),
+    #f8fafc;
+}
+
+/* =========================================================
+   Header
+========================================================= */
+
+.tenant-payment-header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 26px;
+  padding: 28px 30px;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(239, 246, 255, 0.95)
+    );
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.tenant-payment-header > button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  color: #334155;
+  background: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.tenant-payment-header > button:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+
+.tenant-payment-header > div:nth-child(2) > span {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tenant-payment-header h1 {
+  margin: 0 0 8px;
+  color: #0f172a;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.tenant-payment-header p {
+  max-width: 700px;
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.tenant-payment-header-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 20px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  font-size: 25px;
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.22);
+}
+
+/* =========================================================
+   Main Layout
+========================================================= */
+
+.tenant-payment-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(330px, 0.65fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.tenant-payment-layout > main {
+  min-width: 0;
+}
+
+.tenant-payment-layout > aside {
+  display: grid;
+  gap: 18px;
+}
+
+/* =========================================================
+   Main Payment Card
+========================================================= */
+
+.tenant-payment-card {
+  padding: 26px;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.tenant-payment-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.tenant-payment-section-heading > div {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  font-size: 19px;
+}
+
+.tenant-payment-section-heading span,
+.tenant-payment-section-heading small,
+.tenant-payment-section-heading strong {
+  display: block;
+}
+
+.tenant-payment-section-heading small {
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tenant-payment-section-heading strong {
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 18px;
+}
+
+/* =========================================================
+   Payment Breakdown
+========================================================= */
+
+.tenant-payment-breakdown {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 17px;
+  background: #f8fafc;
+}
+
+.tenant-payment-breakdown > div {
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tenant-payment-breakdown > div:last-child {
+  border-bottom: 0;
+}
+
+.tenant-payment-breakdown span {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tenant-payment-breakdown strong {
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.tenant-payment-breakdown .tenant-payment-total {
+  min-height: 82px;
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #ecfeff
+    );
+}
+
+.tenant-payment-total span {
+  color: #1e3a8a;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-payment-total strong {
+  color: #2563eb;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+/* =========================================================
+   Security Note
+========================================================= */
+
+.tenant-payment-security-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 20px;
+  padding: 17px;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.tenant-payment-security-note > svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.tenant-payment-security-note strong {
+  display: block;
+  color: #166534;
+  font-size: 12px;
+}
+
+.tenant-payment-security-note p {
+  margin: 5px 0 0;
+  color: #475569;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   Payment Button
+========================================================= */
+
+.tenant-payment-button {
+  display: flex;
+  width: 100%;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 14px;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #0ea5e9
+    );
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.tenant-payment-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(37, 99, 235, 0.32);
+}
+
+.tenant-payment-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+.tenant-payment-unavailable {
+  margin-top: 13px;
+  padding: 13px;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  color: #b91c1c;
+  background: #fef2f2;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* =========================================================
+   Property Card
+========================================================= */
+
+.tenant-payment-property-card {
+  position: sticky;
+  top: 105px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 21px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.tenant-payment-property-card > img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+}
+
+.tenant-payment-property-card > div {
+  padding: 21px;
+}
+
+.tenant-payment-property-card > div > span {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-payment-property-card h2 {
+  margin: 11px 0 7px;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.tenant-payment-property-card > div > p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.tenant-payment-property-card > div > p svg {
+  color: #2563eb;
+}
+
+/* =========================================================
+   Booking Information
+========================================================= */
+
+.tenant-payment-booking-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.tenant-payment-booking-info > div {
+  min-width: 0;
+  padding: 13px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.tenant-payment-booking-info span,
+.tenant-payment-booking-info strong {
+  display: block;
+}
+
+.tenant-payment-booking-info span {
+  color: #94a3b8;
+  font-size: 7px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tenant-payment-booking-info strong {
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+  color: #0f172a;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Approved Badge
+========================================================= */
+
+.tenant-payment-approved-badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 17px;
+  padding: 14px;
+  border: 1px solid #bbf7d0;
+  border-radius: 13px;
+  color: #15803d;
+  background: #f0fdf4;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.tenant-payment-approved-badge svg {
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   Protection Card
+========================================================= */
+
+.tenant-payment-protection-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 17px;
+  border: 1px solid #bfdbfe;
+  border-radius: 17px;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.tenant-payment-protection-card > svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 19px;
+}
+
+.tenant-payment-protection-card strong {
+  display: block;
+  color: #1e3a8a;
+  font-size: 11px;
+}
+
+.tenant-payment-protection-card p {
+  margin: 5px 0 0;
+  color: #475569;
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   Not Found
+========================================================= */
+
+.tenant-payment-not-found {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 40px;
+  color: #64748b;
+  text-align: center;
+}
+
+.tenant-payment-not-found > svg {
+  color: #2563eb;
+  font-size: 50px;
+}
+
+.tenant-payment-not-found h2 {
+  margin: 15px 0 7px;
+  color: #0f172a;
+  font-size: 25px;
+}
+
+.tenant-payment-not-found p {
+  margin: 0 0 18px;
+}
+
+.tenant-payment-not-found a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border-radius: 11px;
+  color: #ffffff;
+  background: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* =========================================================
+   Focus States
+========================================================= */
+
+.tenant-payment-page button:focus-visible,
+.tenant-payment-page a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width: 1100px) {
+  .tenant-payment-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-payment-property-card {
+    position: static;
+  }
+}
+
+@media (max-width: 780px) {
+  .tenant-payment-page {
+    padding: 18px 14px;
+  }
+
+  .tenant-payment-header {
+    grid-template-columns: 1fr;
+    padding: 22px 18px;
+  }
+
+  .tenant-payment-header > button {
+    width: 100%;
+  }
+
+  .tenant-payment-header-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .tenant-payment-page {
+    padding: 14px 10px;
+  }
+
+  .tenant-payment-card {
+    padding: 19px 15px;
+  }
+
+  .tenant-payment-breakdown > div {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    padding: 15px;
+  }
+
+  .tenant-payment-total strong {
+    font-size: 23px;
+  }
+
+  .tenant-payment-property-card > img {
+    height: 195px;
+  }
+
+  .tenant-payment-booking-info {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-payment-button {
+    min-height: 52px;
+    font-size: 11px;
+  }
+}

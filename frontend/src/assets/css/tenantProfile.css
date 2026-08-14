@@ -1,0 +1,743 @@
+.tenant-profile-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #0f172a;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.1),
+      transparent 32%
+    ),
+    #f8fafc;
+}
+
+.tenant-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+  padding: 28px 30px;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #eff6ff
+  );
+  box-shadow:
+    0 18px 45px
+    rgba(15, 23, 42, 0.08);
+}
+
+.tenant-profile-header > div:first-child > span {
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tenant-profile-header h1 {
+  margin: 8px 0;
+  font-size: clamp(
+    30px,
+    4vw,
+    42px
+  );
+  font-weight: 800;
+}
+
+.tenant-profile-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.tenant-profile-header-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  border-radius: 20px;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8
+  );
+  font-size: 25px;
+}
+
+.tenant-profile-completion {
+  margin-bottom: 22px;
+  padding: 18px 21px;
+  border: 1px solid #dbeafe;
+  border-radius: 17px;
+  background: #ffffff;
+}
+
+.tenant-profile-completion > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tenant-profile-completion strong {
+  font-size: 12px;
+}
+
+.tenant-profile-completion span {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.tenant-profile-progress-track {
+  overflow: hidden;
+  height: 9px;
+  margin-top: 11px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.tenant-profile-progress-track div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #38bdf8
+  );
+  transition: width 0.3s ease;
+}
+
+.tenant-profile-completion p {
+  margin: 9px 0 0;
+  color: #64748b;
+  font-size: 9px;
+}
+
+.tenant-profile-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 0.32fr)
+    minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.tenant-profile-summary-card {
+  position: sticky;
+  top: 24px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: #ffffff;
+  text-align: center;
+  box-shadow:
+    0 16px 40px
+    rgba(15, 23, 42, 0.07);
+}
+
+.tenant-profile-photo-wrapper {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  margin: 0 auto;
+}
+
+.tenant-profile-photo-wrapper img,
+.tenant-profile-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #eff6ff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tenant-profile-photo-placeholder {
+  display: grid;
+  place-items: center;
+  color: #2563eb;
+  background: #dbeafe;
+  font-size: 45px;
+}
+
+.tenant-profile-photo-wrapper > button {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  display: grid;
+  width: 39px;
+  height: 39px;
+  place-items: center;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #2563eb;
+  cursor: pointer;
+}
+
+.tenant-profile-summary-card h2 {
+  margin: 16px 0 8px;
+  font-size: 21px;
+}
+
+.tenant-profile-summary-card > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 8px 0;
+  color: #64748b;
+  font-size: 9px;
+  overflow-wrap: anywhere;
+}
+
+.tenant-profile-role {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #1d4ed8;
+  background: #dbeafe;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-profile-verification {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 13px;
+  border-radius: 12px;
+  color: #16a34a;
+  background: #f0fdf4;
+  text-align: left;
+}
+
+.tenant-profile-verification strong,
+.tenant-profile-verification span {
+  display: block;
+}
+
+.tenant-profile-verification strong {
+  color: #166534;
+  font-size: 9px;
+}
+
+.tenant-profile-verification span {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 8px;
+}
+
+.tenant-profile-edit-button {
+  display: flex;
+  width: 100%;
+  min-height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  border: 0;
+  border-radius: 11px;
+  color: #ffffff;
+  background: #2563eb;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tenant-profile-edit-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.tenant-profile-edit-actions button {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tenant-profile-edit-actions button:first-child {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+.tenant-profile-edit-actions button:last-child {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.tenant-profile-main {
+  display: grid;
+  gap: 20px;
+}
+
+.tenant-profile-section {
+  padding: 23px;
+  border: 1px solid #e2e8f0;
+  border-radius: 21px;
+  background: #ffffff;
+  box-shadow:
+    0 14px 34px
+    rgba(15, 23, 42, 0.06);
+}
+
+.tenant-profile-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tenant-profile-section-heading > div {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 14px;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8
+  );
+}
+
+.tenant-profile-section-heading small,
+.tenant-profile-section-heading strong {
+  display: block;
+}
+
+.tenant-profile-section-heading small {
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-profile-section-heading strong {
+  margin-top: 4px;
+  font-size: 17px;
+}
+
+.tenant-profile-form-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tenant-profile-form-grid label {
+  display: grid;
+  gap: 8px;
+  color: #334155;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.tenant-profile-full-field {
+  grid-column: 1 / -1;
+}
+
+.tenant-profile-form-grid input,
+.tenant-profile-form-grid select,
+.tenant-profile-form-grid textarea {
+  width: 100%;
+  min-height: 47px;
+  padding: 0 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  outline: none;
+  color: #0f172a;
+  background: #ffffff;
+  font: inherit;
+  font-weight: 500;
+}
+
+.tenant-profile-form-grid textarea {
+  min-height: 95px;
+  padding: 13px;
+  resize: vertical;
+}
+
+.tenant-profile-form-grid input:focus,
+.tenant-profile-form-grid select:focus,
+.tenant-profile-form-grid textarea:focus {
+  border-color: #60a5fa;
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.1);
+}
+
+.tenant-profile-form-grid input:disabled,
+.tenant-profile-form-grid select:disabled,
+.tenant-profile-form-grid textarea:disabled {
+  color: #475569;
+  background: #f8fafc;
+  cursor: default;
+}
+
+.tenant-profile-input-with-icon {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  background: #ffffff;
+}
+
+.tenant-profile-input-with-icon svg {
+  margin-left: 13px;
+  color: #2563eb;
+}
+
+.tenant-profile-input-with-icon input {
+  border: 0;
+}
+
+.tenant-profile-error {
+  color: #dc2626;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.tenant-profile-document-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 18px;
+}
+
+.tenant-profile-document-grid article {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+  padding: 15px;
+  border: 1px dashed #93c5fd;
+  border-radius: 13px;
+  background: #eff6ff;
+}
+
+.tenant-profile-document-grid article > svg {
+  flex-shrink: 0;
+  color: #2563eb;
+  font-size: 22px;
+}
+
+.tenant-profile-document-grid article > div:first-of-type {
+  min-width: 0;
+  flex: 1;
+}
+
+.tenant-profile-document-grid strong,
+.tenant-profile-document-grid span {
+  display: block;
+}
+
+.tenant-profile-document-grid strong {
+  font-size: 9px;
+}
+
+.tenant-profile-document-grid span {
+  margin-top: 4px;
+  overflow: hidden;
+  color: #64748b;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tenant-profile-document-grid article > div:last-of-type {
+  display: flex;
+  gap: 6px;
+}
+
+.tenant-profile-document-grid button {
+  min-height: 34px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tenant-profile-document-grid button:last-child {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.tenant-profile-security-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  color: #d97706;
+  background: #fffbeb;
+}
+
+.tenant-profile-security-note p {
+  margin: 0;
+  color: #78350f;
+  font-size: 8px;
+  line-height: 1.65;
+}
+
+.tenant-profile-masked-documents {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 16px;
+}
+
+.tenant-profile-masked-documents > div {
+  padding: 13px;
+  border-radius: 11px;
+  background: #f8fafc;
+}
+
+.tenant-profile-masked-documents span,
+.tenant-profile-masked-documents strong {
+  display: block;
+}
+
+.tenant-profile-masked-documents span {
+  color: #94a3b8;
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.tenant-profile-masked-documents strong {
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.tenant-profile-rental-card {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 0.55fr)
+    minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 17px;
+  background: #f8fafc;
+}
+
+.tenant-profile-rental-card > img {
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  object-fit: cover;
+}
+
+.tenant-profile-rental-card > div {
+  padding: 22px;
+}
+
+.tenant-profile-rental-card > div > span {
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-profile-rental-card h3 {
+  margin: 8px 0;
+  font-size: 22px;
+}
+
+.tenant-profile-rental-card p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
+  font-size: 9px;
+}
+
+.tenant-profile-rental-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tenant-profile-rental-grid > div {
+  padding: 12px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.tenant-profile-rental-grid span,
+.tenant-profile-rental-grid strong {
+  display: block;
+}
+
+.tenant-profile-rental-grid span {
+  color: #94a3b8;
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.tenant-profile-rental-grid strong {
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+  font-size: 9px;
+}
+
+.tenant-profile-rental-actions {
+  display: flex;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.tenant-profile-rental-actions a {
+  display: inline-flex;
+  min-height: 42px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 10px;
+  font-size: 8px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tenant-profile-rental-actions a:first-child {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.tenant-profile-rental-actions a:last-child {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+.tenant-profile-no-rental {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.tenant-profile-no-rental > svg {
+  color: #2563eb;
+  font-size: 42px;
+}
+
+.tenant-profile-no-rental h3 {
+  margin: 13px 0 7px;
+}
+
+.tenant-profile-no-rental p {
+  color: #64748b;
+  font-size: 9px;
+}
+
+.tenant-profile-no-rental a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding: 0 14px;
+  border-radius: 10px;
+  color: #ffffff;
+  background: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tenant-profile-bottom-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.tenant-profile-bottom-actions button {
+  display: inline-flex;
+  min-height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 17px;
+  border: 0;
+  border-radius: 11px;
+  font-size: 9px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tenant-profile-bottom-actions button:first-child {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+.tenant-profile-bottom-actions button:last-child {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+@media (max-width: 1050px) {
+  .tenant-profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-profile-summary-card {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .tenant-profile-page {
+    padding: 18px 13px;
+  }
+
+  .tenant-profile-header-icon {
+    display: none;
+  }
+
+  .tenant-profile-form-grid,
+  .tenant-profile-document-grid,
+  .tenant-profile-masked-documents,
+  .tenant-profile-rental-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-profile-full-field {
+    grid-column: auto;
+  }
+
+  .tenant-profile-rental-card {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-profile-rental-card > img {
+    min-height: 230px;
+  }
+
+  .tenant-profile-rental-actions,
+  .tenant-profile-bottom-actions {
+    flex-direction: column;
+  }
+}

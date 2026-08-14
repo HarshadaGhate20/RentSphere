@@ -1,0 +1,552 @@
+/* ======================================================
+   Landlord Negotiations
+====================================================== */
+
+.landlord-negotiations-page{
+    min-height:100vh;
+    padding:30px;
+    background:#f8fafc;
+}
+
+/* Header */
+
+.landlord-negotiations-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:28px;
+    padding:28px;
+    border-radius:22px;
+    background:white;
+    box-shadow:0 12px 30px rgba(15,23,42,.08);
+}
+
+.landlord-negotiations-header span{
+    color:#2563eb;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+.landlord-negotiations-header h1{
+    margin:8px 0;
+    font-size:34px;
+}
+
+.landlord-negotiations-header p{
+    color:#64748b;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.landlord-negotiations-header-icon{
+    width:80px;
+    height:80px;
+    display:grid;
+    place-items:center;
+    border-radius:20px;
+    background:linear-gradient(135deg,#2563eb,#38bdf8);
+    color:white;
+    font-size:34px;
+}
+
+/* Summary */
+
+.landlord-negotiations-summary-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.landlord-negotiations-summary-grid article{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 10px 24px rgba(15,23,42,.06);
+}
+
+.landlord-negotiations-summary-grid span{
+    display:block;
+    color:#64748b;
+    font-size:12px;
+}
+
+.landlord-negotiations-summary-grid strong{
+    display:block;
+    margin-top:8px;
+    font-size:28px;
+    color:#0f172a;
+}
+
+/* Toolbar */
+
+.landlord-negotiations-toolbar{
+    display:flex;
+    gap:16px;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.landlord-negotiations-search{
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:white;
+    border-radius:12px;
+    padding:0 15px;
+    height:50px;
+    box-shadow:0 8px 18px rgba(15,23,42,.05);
+}
+
+.landlord-negotiations-search input{
+    flex:1;
+    border:none;
+    outline:none;
+    background:transparent;
+}
+
+.landlord-negotiations-toolbar select,
+.landlord-negotiations-toolbar button{
+    height:50px;
+    border:none;
+    border-radius:12px;
+    padding:0 18px;
+    background:white;
+    box-shadow:0 8px 18px rgba(15,23,42,.05);
+    cursor:pointer;
+}
+
+/* Results */
+
+.landlord-negotiations-result-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:20px;
+}
+
+.landlord-negotiations-result-heading span{
+    color:#2563eb;
+    font-size:11px;
+    text-transform:uppercase;
+}
+
+.landlord-negotiations-result-heading h2{
+    margin-top:6px;
+}
+
+.landlord-negotiations-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(380px,1fr));
+    gap:24px;
+}
+
+/* Card */
+
+.landlord-negotiation-card{
+    overflow:hidden;
+    border-radius:22px;
+    background:white;
+    box-shadow:0 12px 28px rgba(15,23,42,.07);
+}
+
+.landlord-negotiation-property-image{
+    position:relative;
+}
+
+.landlord-negotiation-property-image img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.landlord-negotiation-status{
+    position:absolute;
+    top:16px;
+    right:16px;
+    padding:7px 14px;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:11px;
+    font-weight:700;
+    color:white;
+}
+
+.landlord-negotiation-status.pending{
+    background:#f59e0b;
+}
+
+.landlord-negotiation-status.countered{
+    background:#2563eb;
+}
+
+.landlord-negotiation-status.accepted,
+.landlord-negotiation-status.tenant_accepted{
+    background:#16a34a;
+}
+
+.landlord-negotiation-status.rejected,
+.landlord-negotiation-status.tenant_rejected{
+    background:#dc2626;
+}
+
+.landlord-negotiation-card-body{
+    padding:22px;
+}
+
+.landlord-negotiation-card-body>span{
+    color:#64748b;
+    font-size:11px;
+}
+
+.landlord-negotiation-card-body h3{
+    margin:8px 0;
+    font-size:22px;
+}
+
+.landlord-negotiation-location{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#64748b;
+}
+
+.landlord-negotiation-tenant{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:18px 0;
+    padding:14px;
+    border-radius:12px;
+    background:#f8fafc;
+}
+
+.landlord-negotiation-tenant strong{
+    display:block;
+    margin-top:4px;
+}
+
+.landlord-negotiation-price-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:18px;
+}
+
+.landlord-negotiation-price-grid div{
+    padding:14px;
+    border-radius:12px;
+    background:#f8fafc;
+}
+
+.landlord-negotiation-price-grid span{
+    display:block;
+    color:#64748b;
+    font-size:11px;
+}
+
+.landlord-negotiation-price-grid strong{
+    display:block;
+    margin-top:6px;
+}
+
+.landlord-negotiation-message-preview{
+    margin-top:18px;
+    color:#475569;
+    line-height:1.7;
+}
+
+.landlord-negotiation-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+}
+
+.landlord-negotiation-actions button{
+    flex:1;
+    min-height:44px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:700;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+.landlord-negotiation-actions button:nth-child(1){
+    background:#eff6ff;
+    color:#2563eb;
+}
+
+.landlord-negotiation-actions button:nth-child(2){
+    background:#16a34a;
+    color:white;
+}
+
+.landlord-negotiation-actions button:nth-child(3){
+    background:#2563eb;
+    color:white;
+}
+
+.landlord-negotiation-actions button:nth-child(4){
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+/* Empty */
+
+.landlord-negotiations-empty{
+    padding:80px 30px;
+    text-align:center;
+    background:white;
+    border-radius:20px;
+}
+
+.landlord-negotiations-empty svg{
+    font-size:50px;
+    color:#2563eb;
+}
+
+.landlord-negotiations-empty h3{
+    margin-top:16px;
+}
+
+.landlord-negotiations-empty p{
+    color:#64748b;
+    margin:12px 0 25px;
+}
+
+.landlord-negotiations-empty button{
+    height:46px;
+    border:none;
+    padding:0 18px;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+/* Modal */
+
+.landlord-negotiation-modal-backdrop{
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:1000;
+}
+
+.landlord-negotiation-modal,
+.landlord-counter-offer-modal{
+    position:relative;
+    width:900px;
+    max-width:100%;
+    max-height:90vh;
+    overflow:auto;
+    background:white;
+    border-radius:22px;
+    padding:28px;
+}
+
+.landlord-negotiation-modal-close{
+    position:absolute;
+    right:18px;
+    top:18px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:20px;
+}
+
+.landlord-negotiation-modal-header{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    margin-bottom:24px;
+}
+
+.landlord-negotiation-modal-header img{
+    width:140px;
+    height:100px;
+    border-radius:14px;
+    object-fit:cover;
+}
+
+.landlord-negotiation-modal-header h2{
+    margin:8px 0;
+}
+
+.landlord-negotiation-modal-body section{
+    margin-top:24px;
+    padding:18px;
+    border-radius:14px;
+    background:#f8fafc;
+}
+
+.landlord-negotiation-modal-body section span{
+    color:#64748b;
+    font-size:11px;
+}
+
+.landlord-negotiation-modal-actions{
+    display:flex;
+    gap:12px;
+    margin-top:28px;
+}
+
+.landlord-negotiation-modal-actions button,
+.landlord-counter-offer-actions button{
+    flex:1;
+    height:48px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+.landlord-counter-offer-modal label{
+    display:block;
+    margin-top:20px;
+    font-weight:700;
+}
+
+.landlord-counter-money-input{
+    display:flex;
+    align-items:center;
+    margin-top:10px;
+    border:1px solid #dbeafe;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.landlord-counter-money-input strong{
+    width:60px;
+    background:#eff6ff;
+    display:grid;
+    place-items:center;
+}
+
+.landlord-counter-money-input input{
+    flex:1;
+    border:none;
+    outline:none;
+    padding:14px;
+}
+
+.landlord-counter-offer-modal textarea{
+    width:100%;
+    margin-top:10px;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #dbeafe;
+    resize:vertical;
+}
+
+.landlord-counter-offer-actions{
+    display:flex;
+    gap:12px;
+    margin-top:24px;
+}
+
+/* Responsive */
+
+@media(max-width:1100px){
+
+.landlord-negotiations-summary-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.landlord-negotiations-page{
+padding:18px;
+}
+
+.landlord-negotiations-summary-grid{
+grid-template-columns:1fr;
+}
+
+.landlord-negotiations-toolbar{
+flex-direction:column;
+}
+
+.landlord-negotiations-search{
+width:100%;
+}
+
+.landlord-negotiations-grid{
+grid-template-columns:1fr;
+}
+
+.landlord-negotiation-modal-header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.landlord-negotiation-modal-actions,
+.landlord-counter-offer-actions{
+flex-direction:column;
+}
+
+}
+/* =========================================================
+   NEGOTIATION PROPERTY IMAGE
+========================================================= */
+
+.landlord-negotiation-property-image {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.landlord-negotiation-property-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.landlord-negotiation-image-placeholder {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #64748b;
+  background: #f8fafc;
+}
+
+.landlord-negotiation-image-placeholder svg {
+  font-size: 38px;
+}
+
+.landlord-negotiation-image-placeholder span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.landlord-negotiation-modal-header img {
+  width: 170px;
+  height: 120px;
+  border-radius: 14px;
+  object-fit: cover;
+}

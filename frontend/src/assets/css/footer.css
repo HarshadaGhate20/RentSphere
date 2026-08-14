@@ -1,0 +1,57 @@
+.footer{
+
+background:#1E293B;
+
+color:white;
+
+padding:60px 0;
+
+margin-top:80px;
+
+}
+
+.footer h5{
+
+margin-bottom:20px;
+
+}
+
+.footer a{
+
+display:block;
+
+color:#cbd5e1;
+
+text-decoration:none;
+
+margin-bottom:10px;
+
+}
+
+.footer a:hover{
+
+color:white;
+
+}
+
+.social-icons{
+
+display:flex;
+
+gap:15px;
+
+font-size:22px;
+
+margin-top:20px;
+
+cursor:pointer;
+
+}
+
+.footer hr{
+
+margin:40px 0;
+
+border-color:#475569;
+
+}

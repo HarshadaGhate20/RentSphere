@@ -1,0 +1,942 @@
+/* =========================================================
+   Tenant Wishlist Page
+========================================================= */
+
+.tenant-wishlist-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #0f172a;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.1),
+      transparent 30%
+    ),
+    #f8fafc;
+}
+
+/* =========================================================
+   Header
+========================================================= */
+
+.tenant-wishlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 28px 30px;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(239, 246, 255, 0.94)
+    );
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.tenant-wishlist-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tenant-wishlist-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(31px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.tenant-wishlist-header p {
+  max-width: 720px;
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.tenant-wishlist-header-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 21px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #e11d48, #fb7185);
+  font-size: 25px;
+  box-shadow: 0 16px 35px rgba(225, 29, 72, 0.22);
+}
+
+/* =========================================================
+   Wishlist Summary
+========================================================= */
+
+.tenant-wishlist-summary {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 22px;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 20px 22px;
+  border: 1px solid #bfdbfe;
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    #eff6ff,
+    #f8fbff
+  );
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+}
+
+.tenant-wishlist-summary > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tenant-wishlist-summary > div span {
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-wishlist-summary > div strong {
+  color: #2563eb;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.tenant-wishlist-summary p {
+  margin: 0;
+  color: #475569;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.tenant-wishlist-summary a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border-radius: 11px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* =========================================================
+   Main Content
+========================================================= */
+
+.tenant-wishlist-content {
+  padding-bottom: 24px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 23px;
+  background: #ffffff;
+  box-shadow: 0 17px 43px rgba(15, 23, 42, 0.07);
+}
+
+/* =========================================================
+   Toolbar
+========================================================= */
+
+.tenant-wishlist-toolbar {
+  display: grid;
+  grid-template-columns:
+    minmax(280px, 1fr)
+    minmax(140px, 0.3fr)
+    minmax(160px, 0.35fr)
+    minmax(165px, 0.35fr)
+    auto;
+  gap: 11px;
+  align-items: center;
+  padding: 22px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tenant-wishlist-search {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+  background: #f8fafc;
+}
+
+.tenant-wishlist-search:focus-within {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.tenant-wishlist-search input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  color: #0f172a;
+  background: transparent;
+  font-size: 12px;
+}
+
+.tenant-wishlist-search input::placeholder {
+  color: #94a3b8;
+}
+
+.tenant-wishlist-toolbar select,
+.tenant-wishlist-reset {
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  color: #475569;
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tenant-wishlist-toolbar select:focus {
+  border-color: #60a5fa;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.tenant-wishlist-reset {
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.tenant-wishlist-reset:hover {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+/* =========================================================
+   Result Heading
+========================================================= */
+
+.tenant-wishlist-result-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px 5px;
+}
+
+.tenant-wishlist-result-heading span {
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tenant-wishlist-result-heading h2 {
+  margin: 5px 0 0;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.tenant-wishlist-result-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* =========================================================
+   Wishlist Grid
+========================================================= */
+
+.tenant-wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 21px;
+  padding: 20px 24px;
+}
+
+.tenant-wishlist-card {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tenant-wishlist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 46px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================================================
+   Property Image
+========================================================= */
+
+.tenant-wishlist-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.tenant-wishlist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.tenant-wishlist-card:hover .tenant-wishlist-image img {
+  transform: scale(1.04);
+}
+
+.tenant-wishlist-image > span {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #2563eb;
+  background: rgba(239, 246, 255, 0.96);
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-wishlist-remove-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(225, 29, 72, 0.92);
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(225, 29, 72, 0.28);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.tenant-wishlist-remove-icon:hover {
+  transform: scale(1.07);
+  background: #be123c;
+}
+
+/* =========================================================
+   Card Body
+========================================================= */
+
+.tenant-wishlist-card-body {
+  padding: 20px;
+}
+
+.tenant-wishlist-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tenant-wishlist-title-row > div > span {
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-wishlist-title-row h3 {
+  margin: 6px 0 0;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.tenant-wishlist-title-row small {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 6px 8px;
+  border-radius: 999px;
+  color: #15803d;
+  background: #dcfce7;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.tenant-wishlist-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.tenant-wishlist-location svg {
+  flex-shrink: 0;
+  color: #2563eb;
+}
+
+.tenant-wishlist-rent {
+  margin: 16px 0;
+  color: #2563eb;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.tenant-wishlist-rent span {
+  margin-left: 3px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   Specifications
+========================================================= */
+
+.tenant-wishlist-specifications {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 13px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.tenant-wishlist-specifications span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.tenant-wishlist-specifications svg {
+  color: #2563eb;
+}
+
+/* =========================================================
+   Detail Grid
+========================================================= */
+
+.tenant-wishlist-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.tenant-wishlist-details-grid > div {
+  padding: 11px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.tenant-wishlist-details-grid span,
+.tenant-wishlist-details-grid strong {
+  display: block;
+}
+
+.tenant-wishlist-details-grid span {
+  color: #94a3b8;
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.tenant-wishlist-details-grid strong {
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.tenant-wishlist-saved-date {
+  margin-top: 13px;
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+/* =========================================================
+   Card Actions
+========================================================= */
+
+.tenant-wishlist-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.tenant-wishlist-actions button,
+.tenant-wishlist-actions a {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.tenant-wishlist-actions button:first-child {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.tenant-wishlist-actions a {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.tenant-wishlist-remove-button {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.tenant-wishlist-actions button:hover,
+.tenant-wishlist-actions a:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Empty State
+========================================================= */
+
+.tenant-wishlist-empty {
+  margin: 20px 24px;
+  padding: 64px 20px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 18px;
+  color: #64748b;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.tenant-wishlist-empty > svg {
+  margin-bottom: 13px;
+  color: #e11d48;
+  font-size: 44px;
+}
+
+.tenant-wishlist-empty h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.tenant-wishlist-empty p {
+  margin: 8px 0 20px;
+  font-size: 12px;
+}
+
+.tenant-wishlist-empty > div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tenant-wishlist-empty button,
+.tenant-wishlist-empty a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border-radius: 11px;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tenant-wishlist-empty button {
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  background: #ffffff;
+}
+
+.tenant-wishlist-empty a {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+/* =========================================================
+   Modal
+========================================================= */
+
+.tenant-wishlist-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5700;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.tenant-wishlist-modal {
+  position: relative;
+  width: min(820px, 100%);
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  border-radius: 25px;
+  background: #ffffff;
+  box-shadow: 0 35px 90px rgba(15, 23, 42, 0.35);
+}
+
+.tenant-wishlist-modal > img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+
+.tenant-wishlist-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 5;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.96);
+  cursor: pointer;
+}
+
+.tenant-wishlist-modal-body {
+  padding: 26px;
+}
+
+.tenant-wishlist-modal-body > span:first-child {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-wishlist-modal-body h2 {
+  margin: 10px 0 7px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.tenant-wishlist-modal-body > p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.tenant-wishlist-modal-body > p svg {
+  color: #2563eb;
+}
+
+.tenant-wishlist-verified-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 17px;
+  padding: 13px;
+  border: 1px solid #bbf7d0;
+  border-radius: 13px;
+  color: #15803d;
+  background: #f0fdf4;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tenant-wishlist-modal-rent {
+  margin-top: 20px;
+  color: #2563eb;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.tenant-wishlist-modal-rent span {
+  margin-left: 4px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.tenant-wishlist-modal-specifications {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 20px;
+}
+
+.tenant-wishlist-modal-specifications > div {
+  padding: 15px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.tenant-wishlist-modal-specifications svg {
+  color: #2563eb;
+}
+
+.tenant-wishlist-modal-specifications span,
+.tenant-wishlist-modal-specifications strong {
+  display: block;
+}
+
+.tenant-wishlist-modal-specifications span {
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.tenant-wishlist-modal-specifications strong {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.tenant-wishlist-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.tenant-wishlist-modal-actions a,
+.tenant-wishlist-modal-actions button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 145px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 11px;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tenant-wishlist-modal-actions a {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.tenant-wishlist-modal-actions button:nth-child(2) {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.tenant-wishlist-modal-actions button:last-child {
+  color: #334155;
+  background: #e2e8f0;
+}
+
+/* =========================================================
+   Focus
+========================================================= */
+
+.tenant-wishlist-page button:focus-visible,
+.tenant-wishlist-page a:focus-visible,
+.tenant-wishlist-page input:focus-visible,
+.tenant-wishlist-page select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width: 1400px) {
+  .tenant-wishlist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tenant-wishlist-toolbar {
+    grid-template-columns:
+      minmax(260px, 1fr)
+      repeat(3, minmax(140px, 0.35fr));
+  }
+
+  .tenant-wishlist-reset {
+    grid-column: 1 / -1;
+    justify-self: end;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .tenant-wishlist-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-wishlist-summary > div {
+    justify-content: space-between;
+  }
+
+  .tenant-wishlist-summary a {
+    width: 100%;
+  }
+
+  .tenant-wishlist-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tenant-wishlist-search {
+    grid-column: 1 / -1;
+  }
+
+  .tenant-wishlist-reset {
+    grid-column: auto;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 760px) {
+  .tenant-wishlist-page {
+    padding: 18px 14px;
+  }
+
+  .tenant-wishlist-header {
+    align-items: flex-start;
+    padding: 22px 18px;
+    border-radius: 19px;
+  }
+
+  .tenant-wishlist-header-icon {
+    display: none;
+  }
+
+  .tenant-wishlist-toolbar,
+  .tenant-wishlist-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-wishlist-search,
+  .tenant-wishlist-reset {
+    grid-column: auto;
+  }
+
+  .tenant-wishlist-result-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tenant-wishlist-grid {
+    padding: 18px 14px;
+  }
+
+  .tenant-wishlist-modal > img {
+    height: 240px;
+  }
+
+  .tenant-wishlist-modal-body {
+    padding: 20px 16px;
+  }
+
+  .tenant-wishlist-modal-specifications {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-wishlist-modal-actions {
+    flex-direction: column;
+  }
+
+  .tenant-wishlist-modal-actions a,
+  .tenant-wishlist-modal-actions button {
+    width: 100%;
+  }
+
+  .tenant-wishlist-empty > div {
+    flex-direction: column;
+  }
+
+  .tenant-wishlist-empty button,
+  .tenant-wishlist-empty a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .tenant-wishlist-page {
+    padding: 14px 10px;
+  }
+
+  .tenant-wishlist-header h1 {
+    font-size: 29px;
+  }
+
+  .tenant-wishlist-image {
+    height: 195px;
+  }
+
+  .tenant-wishlist-title-row {
+    flex-direction: column;
+  }
+
+  .tenant-wishlist-title-row small {
+    width: fit-content;
+  }
+
+  .tenant-wishlist-specifications,
+  .tenant-wishlist-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-wishlist-actions {
+    flex-direction: column;
+  }
+
+  .tenant-wishlist-actions button,
+  .tenant-wishlist-actions a {
+    width: 100%;
+  }
+}

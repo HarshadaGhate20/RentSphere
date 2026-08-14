@@ -1,0 +1,876 @@
+/* =========================================================
+   RENTSPHERE - ADD PROPERTY PAGE
+   ========================================================= */
+
+.add-property-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 28px;
+  background:
+    linear-gradient(
+      135deg,
+      #f8fbff 0%,
+      #eef6ff 45%,
+      #f8fafc 100%
+    );
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.add-property-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 28px 30px;
+  margin-bottom: 24px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  border: 1px solid #dbeafe;
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 35px
+    rgba(15, 23, 42, 0.06);
+}
+
+.page-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #2563eb;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.add-property-header h1 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 34px;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+.add-property-header p {
+  margin:
+    10px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.header-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #38bdf8
+    );
+
+  color: #ffffff;
+
+  font-size: 23px;
+
+  box-shadow:
+    0 10px 25px
+    rgba(37, 99, 235, 0.22);
+}
+
+
+/* =========================================================
+   PROGRESS CARD
+   ========================================================= */
+
+.property-progress-card {
+  margin-bottom: 24px;
+
+  padding: 22px 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(15, 23, 42, 0.05);
+}
+
+.progress-information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.progress-information strong {
+  color: #2563eb;
+}
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+
+  overflow: hidden;
+
+  background: #e2e8f0;
+
+  border-radius: 999px;
+}
+
+.progress-value {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #38bdf8
+    );
+
+  transition:
+    width 0.3s ease;
+}
+
+.step-labels {
+  display: grid;
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.step-labels span {
+  color: #94a3b8;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.step-labels span.active {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   MAIN FORM CARD
+   ========================================================= */
+
+.add-property-form-card {
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+
+  box-shadow:
+    0 15px 40px
+    rgba(15, 23, 42, 0.06);
+}
+
+.form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-bottom: 28px;
+}
+
+.form-section-title > svg {
+  width: 44px;
+  height: 44px;
+
+  padding: 12px;
+
+  flex-shrink: 0;
+
+  color: #2563eb;
+
+  background: #eff6ff;
+
+  border-radius: 13px;
+}
+
+.form-section-title h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.form-section-title p {
+  margin:
+    5px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 21px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.form-field.full-width {
+  grid-column:
+    1 / -1;
+}
+
+.form-field label {
+  margin-bottom: 8px;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  color: #0f172a;
+
+  background: #f8fafc;
+
+  border:
+    1px solid #cbd5e1;
+
+  border-radius: 11px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+
+  min-height: 130px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  background: #ffffff;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.1);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-field small {
+  margin-top: 6px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   CHECKBOX
+   ========================================================= */
+
+.checkbox-field {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 16px;
+
+  background: #f8fafc;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 11px;
+
+  cursor: pointer;
+}
+
+.checkbox-field input {
+  width: 17px;
+  height: 17px;
+
+  margin: 0;
+
+  accent-color: #2563eb;
+}
+
+
+/* =========================================================
+   AMENITIES
+   ========================================================= */
+
+.amenities-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.amenity-option {
+  min-height: 44px;
+
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  color: #475569;
+
+  background: #f8fafc;
+
+  border:
+    1px solid #dbe3ee;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    all 0.2s ease;
+}
+
+.amenity-option:hover {
+  color: #2563eb;
+
+  border-color: #93c5fd;
+
+  background: #eff6ff;
+}
+
+.amenity-option.selected {
+  color: #1d4ed8;
+
+  background: #dbeafe;
+
+  border-color: #60a5fa;
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD
+   ========================================================= */
+
+.image-upload-box {
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 30px;
+
+  color: #64748b;
+
+  background: #f8fafc;
+
+  border:
+    2px dashed #93c5fd;
+
+  border-radius: 17px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    all 0.2s ease;
+}
+
+.image-upload-box:hover {
+  background: #eff6ff;
+
+  border-color: #2563eb;
+}
+
+.image-upload-box > svg {
+  color: #2563eb;
+
+  font-size: 38px;
+}
+
+.image-upload-box h3 {
+  margin: 6px 0 0;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.image-upload-box p {
+  margin: 0;
+
+  font-size: 12px;
+}
+
+.image-upload-box span {
+  margin-top: 8px;
+
+  padding: 9px 15px;
+
+  color: #ffffff;
+
+  background: #2563eb;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+   ========================================================= */
+
+.image-preview-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 20px;
+}
+
+.image-preview-card {
+  position: relative;
+
+  height: 150px;
+
+  overflow: hidden;
+
+  background: #e2e8f0;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 20px
+    rgba(15, 23, 42, 0.08);
+}
+
+.image-preview-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.image-preview-card button {
+  position: absolute;
+
+  top: 9px;
+  right: 9px;
+
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  background:
+    rgba(15, 23, 42, 0.75);
+
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.cover-badge {
+  position: absolute;
+
+  left: 9px;
+  bottom: 9px;
+
+  padding: 6px 10px;
+
+  color: #ffffff;
+
+  background: #2563eb;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   REVIEW
+   ========================================================= */
+
+.property-review {
+  margin-top: 28px;
+
+  padding: 22px;
+
+  background: #f8fafc;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 16px;
+}
+
+.property-review h3 {
+  margin:
+    0 0 18px;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.review-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.review-grid > div {
+  padding: 14px;
+
+  background: #ffffff;
+
+  border:
+    1px solid #e2e8f0;
+
+  border-radius: 11px;
+}
+
+.review-grid small {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+}
+
+.review-grid strong {
+  color: #0f172a;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+   ========================================================= */
+
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 32px;
+  padding-top: 22px;
+
+  border-top:
+    1px solid #e2e8f0;
+}
+
+.primary-button,
+.secondary-button,
+.submit-button {
+  min-width: 120px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-button {
+  color: #ffffff;
+
+  background: #2563eb;
+
+  border:
+    1px solid #2563eb;
+}
+
+.primary-button:hover {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(37, 99, 235, 0.2);
+}
+
+.secondary-button {
+  color: #334155;
+
+  background: #ffffff;
+
+  border:
+    1px solid #cbd5e1;
+}
+
+.secondary-button:hover {
+  background: #f8fafc;
+}
+
+.submit-button {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #22c55e
+    );
+
+  border:
+    1px solid #16a34a;
+}
+
+.submit-button:hover {
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 8px 22px
+    rgba(22, 163, 74, 0.22);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled,
+.submit-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (
+  max-width: 1100px
+) {
+  .amenities-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .review-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .image-preview-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+}
+
+@media (
+  max-width: 768px
+) {
+  .add-property-page {
+    padding: 16px;
+  }
+
+  .add-property-header {
+    padding: 22px;
+
+    align-items: flex-start;
+  }
+
+  .add-property-header h1 {
+    font-size: 27px;
+  }
+
+  .header-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .add-property-form-card {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .form-field.full-width {
+    grid-column: auto;
+  }
+
+  .step-labels {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    row-gap: 9px;
+  }
+
+  .amenities-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .image-preview-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .review-grid {
+    grid-template-columns:
+      1fr;
+  }
+}
+
+@media (
+  max-width: 480px
+) {
+  .header-icon {
+    display: none;
+  }
+
+  .amenities-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .image-preview-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .form-navigation {
+    flex-direction: column-reverse;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .submit-button {
+    width: 100%;
+  }
+}

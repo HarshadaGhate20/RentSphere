@@ -1,0 +1,29 @@
+# Node / React
+node_modules/
+build/
+dist/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Java / Spring Boot
+target/
+*.class
+*.jar
+*.war
+*.log
+
+# .NET
+bin/
+obj/
+.vs/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

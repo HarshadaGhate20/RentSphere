@@ -1,0 +1,677 @@
+/* =========================================================
+   Tenant Rent Negotiation
+========================================================= */
+
+.tenant-negotiation-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #0f172a;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.1),
+      transparent 30%
+    ),
+    #f8fafc;
+}
+
+/* Header */
+
+.tenant-negotiation-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 24px;
+  padding: 28px 30px;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(239, 246, 255, 0.94)
+    );
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.tenant-negotiation-header > button {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  color: #334155;
+  background: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tenant-negotiation-header > div > span {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tenant-negotiation-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.tenant-negotiation-header p {
+  max-width: 690px;
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Main Layout */
+
+.tenant-negotiation-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(320px, 0.65fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.tenant-negotiation-layout > main {
+  min-width: 0;
+}
+
+.tenant-negotiation-layout > aside {
+  display: grid;
+  gap: 18px;
+}
+
+/* Form Card */
+
+.tenant-negotiation-form-card,
+.tenant-negotiation-status-card {
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.07);
+}
+
+.tenant-negotiation-form-heading,
+.tenant-negotiation-status-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 22px;
+}
+
+.tenant-negotiation-form-heading > div,
+.tenant-negotiation-status-heading > div {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 15px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  font-size: 18px;
+}
+
+.tenant-negotiation-form-heading span,
+.tenant-negotiation-form-heading small,
+.tenant-negotiation-form-heading strong,
+.tenant-negotiation-status-heading span,
+.tenant-negotiation-status-heading small,
+.tenant-negotiation-status-heading strong {
+  display: block;
+}
+
+.tenant-negotiation-form-heading small,
+.tenant-negotiation-status-heading small {
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tenant-negotiation-form-heading strong,
+.tenant-negotiation-status-heading strong {
+  margin-top: 4px;
+  font-size: 17px;
+}
+
+/* Listed Rent */
+
+.tenant-negotiation-listed-rent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding: 18px;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  background: #eff6ff;
+}
+
+.tenant-negotiation-listed-rent > span {
+  color: #475569;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tenant-negotiation-listed-rent > strong {
+  color: #2563eb;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.tenant-negotiation-listed-rent small {
+  margin-left: 4px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Form Fields */
+
+.tenant-negotiation-form-card label {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  color: #334155;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.tenant-negotiation-form-card label > small {
+  color: #64748b;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.tenant-negotiation-money-input {
+  display: flex;
+  min-height: 49px;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.tenant-negotiation-money-input:focus-within {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.tenant-negotiation-money-input > strong {
+  display: grid;
+  width: 56px;
+  align-self: stretch;
+  place-items: center;
+  flex-shrink: 0;
+  color: #2563eb;
+  background: #eff6ff;
+  border-right: 1px solid #dbeafe;
+}
+
+.tenant-negotiation-money-input input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 0 14px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.tenant-negotiation-form-card textarea {
+  width: 100%;
+  min-height: 135px;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.tenant-negotiation-form-card textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Form Actions */
+
+.tenant-negotiation-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 11px;
+  margin-top: 24px;
+}
+
+.tenant-negotiation-form-actions button {
+  display: inline-flex;
+  min-width: 165px;
+  min-height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tenant-negotiation-form-actions button:first-child {
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  background: #ffffff;
+}
+
+.tenant-negotiation-form-actions button:last-child {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.22);
+}
+
+.tenant-negotiation-form-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+/* Status Card */
+
+.tenant-negotiation-status-card {
+  display: grid;
+  gap: 20px;
+}
+
+.tenant-negotiation-price-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.tenant-negotiation-price-grid > div {
+  padding: 15px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.tenant-negotiation-price-grid span,
+.tenant-negotiation-price-grid strong {
+  display: block;
+}
+
+.tenant-negotiation-price-grid span {
+  color: #94a3b8;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.tenant-negotiation-price-grid strong {
+  margin-top: 6px;
+  color: #0f172a;
+  font-size: 13px;
+}
+
+.tenant-negotiation-message-box,
+.tenant-negotiation-landlord-message {
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.tenant-negotiation-message-box {
+  background: #f8fafc;
+}
+
+.tenant-negotiation-landlord-message {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+}
+
+.tenant-negotiation-message-box span,
+.tenant-negotiation-landlord-message span {
+  color: #64748b;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-negotiation-message-box p,
+.tenant-negotiation-landlord-message p {
+  margin: 7px 0 0;
+  color: #334155;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.tenant-negotiation-counter-actions {
+  display: flex;
+  gap: 11px;
+  flex-wrap: wrap;
+}
+
+.tenant-negotiation-counter-actions button,
+.tenant-negotiation-book-button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 11px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tenant-negotiation-counter-actions button:first-child {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+.tenant-negotiation-counter-actions button:last-child {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.tenant-negotiation-book-button {
+  width: fit-content;
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.tenant-negotiation-pending-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #fde68a;
+  border-radius: 13px;
+  color: #92400e;
+  background: #fffbeb;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.tenant-negotiation-pending-note svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Property Card */
+
+.tenant-negotiation-property-card {
+  position: sticky;
+  top: 105px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 21px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.tenant-negotiation-property-card > img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+}
+
+.tenant-negotiation-property-card > div {
+  padding: 21px;
+}
+
+.tenant-negotiation-property-card > div > span {
+  display: inline-flex;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tenant-negotiation-property-card h2 {
+  margin: 10px 0 7px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.tenant-negotiation-property-card p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.tenant-negotiation-property-card p svg {
+  color: #2563eb;
+}
+
+.tenant-negotiation-property-specs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 17px;
+  padding: 13px;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.tenant-negotiation-property-specs span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #475569;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.tenant-negotiation-property-specs svg {
+  color: #2563eb;
+}
+
+.tenant-negotiation-property-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tenant-negotiation-property-price span {
+  color: #64748b;
+  font-size: 9px;
+}
+
+.tenant-negotiation-property-price strong {
+  color: #2563eb;
+  font-size: 13px;
+}
+
+.tenant-negotiation-landlord {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 17px;
+  padding: 13px;
+  border: 1px solid #bbf7d0;
+  border-radius: 13px;
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.tenant-negotiation-landlord span,
+.tenant-negotiation-landlord strong {
+  display: block;
+}
+
+.tenant-negotiation-landlord span {
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.tenant-negotiation-landlord strong {
+  margin-top: 4px;
+  color: #166534;
+  font-size: 11px;
+  text-transform: none;
+}
+
+/* Info Card */
+
+.tenant-negotiation-info-card {
+  display: flex;
+  gap: 12px;
+  padding: 17px;
+  border: 1px solid #bfdbfe;
+  border-radius: 17px;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.tenant-negotiation-info-card > svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.tenant-negotiation-info-card strong {
+  color: #1e3a8a;
+  font-size: 11px;
+}
+
+.tenant-negotiation-info-card p {
+  margin: 5px 0 0;
+  color: #475569;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* Not Found */
+
+.tenant-negotiation-not-found {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 40px;
+  color: #64748b;
+  text-align: center;
+}
+
+.tenant-negotiation-not-found > svg {
+  color: #2563eb;
+  font-size: 48px;
+}
+
+.tenant-negotiation-not-found h2 {
+  margin: 14px 0 7px;
+  color: #0f172a;
+}
+
+.tenant-negotiation-not-found p {
+  margin: 0 0 18px;
+}
+
+.tenant-negotiation-not-found a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border-radius: 11px;
+  color: #ffffff;
+  background: #2563eb;
+  text-decoration: none;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .tenant-negotiation-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-negotiation-property-card {
+    position: static;
+  }
+
+  .tenant-negotiation-price-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .tenant-negotiation-page {
+    padding: 18px 14px;
+  }
+
+  .tenant-negotiation-header {
+    flex-direction: column;
+    padding: 22px 18px;
+  }
+
+  .tenant-negotiation-header > button {
+    width: 100%;
+  }
+
+  .tenant-negotiation-form-actions,
+  .tenant-negotiation-counter-actions {
+    flex-direction: column;
+  }
+
+  .tenant-negotiation-form-actions button,
+  .tenant-negotiation-counter-actions button,
+  .tenant-negotiation-book-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .tenant-negotiation-page {
+    padding: 14px 10px;
+  }
+
+  .tenant-negotiation-form-card,
+  .tenant-negotiation-status-card {
+    padding: 18px 15px;
+  }
+
+  .tenant-negotiation-price-grid,
+  .tenant-negotiation-property-specs {
+    grid-template-columns: 1fr;
+  }
+
+  .tenant-negotiation-property-card > img {
+    height: 190px;
+  }
+}

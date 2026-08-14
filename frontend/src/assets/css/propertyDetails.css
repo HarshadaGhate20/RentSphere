@@ -1,0 +1,986 @@
+/* =========================================================
+   Property Details Page
+========================================================= */
+
+.property-details-page {
+  min-height: 100vh;
+  padding: 32px 4%;
+  color: #0f172a;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.1),
+      transparent 30%
+    ),
+    #f8fafc;
+}
+
+/* =========================================================
+   Top Navigation
+========================================================= */
+
+.property-details-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.property-details-topbar button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  color: #334155;
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.property-details-topbar button:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+
+.property-details-wishlist {
+  color: #e11d48 !important;
+  border-color: #fecdd3 !important;
+  background: #fff1f2 !important;
+}
+
+.property-details-wishlist.saved {
+  color: #ffffff !important;
+  border-color: #e11d48 !important;
+  background: #e11d48 !important;
+}
+
+/* =========================================================
+   Main Gallery and Booking Panel
+========================================================= */
+
+.property-details-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(330px, 0.6fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.property-gallery-section {
+  min-width: 0;
+}
+
+.property-main-image {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+}
+
+.property-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.property-main-image > span {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: inline-flex;
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: #2563eb;
+  background: rgba(255, 255, 255, 0.95);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.16);
+}
+
+/* =========================================================
+   Thumbnail Gallery
+========================================================= */
+
+.property-thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.property-thumbnail-grid button {
+  height: 105px;
+  padding: 0;
+  overflow: hidden;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  background: #ffffff;
+  cursor: pointer;
+  opacity: 0.72;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.property-thumbnail-grid button:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.property-thumbnail-grid button.active {
+  border-color: #2563eb;
+  opacity: 1;
+}
+
+.property-thumbnail-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   Booking Panel
+========================================================= */
+
+.property-booking-panel {
+  position: sticky;
+  top: 105px;
+  padding: 26px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.1);
+}
+
+.property-reference {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #475569;
+  background: #e2e8f0;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.property-panel-rent {
+  margin-top: 18px;
+  color: #2563eb;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.property-panel-rent span {
+  margin-left: 4px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.property-booking-panel > p {
+  margin: 16px 0 0;
+  color: #475569;
+  font-size: 13px;
+}
+
+.property-booking-panel > p strong {
+  color: #0f172a;
+}
+
+.property-panel-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0;
+  padding: 13px;
+  border: 1px solid #bbf7d0;
+  border-radius: 13px;
+  color: #15803d;
+  background: #f0fdf4;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.property-book-panel-button,
+.property-book-button,
+.property-visit-button,
+.property-negotiate-button {
+  display: flex;
+  width: 100%;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 11px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.property-book-button {
+  border: 0;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.22);
+}
+
+.property-visit-button {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  background: #ffffff;
+}
+
+.property-negotiate-button {
+  border: 0;
+  color: #ffffff;
+  background: #16a34a;
+  box-shadow: 0 12px 24px rgba(22, 163, 74, 0.2);
+}
+
+.property-book-button:hover,
+.property-visit-button:hover,
+.property-negotiate-button:hover {
+  transform: translateY(-2px);
+}
+
+.property-tenant-action-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 16px;
+  padding: 13px;
+  border: 1px solid #fde68a;
+  border-radius: 13px;
+  color: #92400e;
+  background: #fffbeb;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Lower Content Layout
+========================================================= */
+
+.property-details-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.6fr);
+  gap: 28px;
+  align-items: start;
+  margin-top: 28px;
+}
+
+.property-details-content-grid > main {
+  display: grid;
+  gap: 20px;
+}
+
+.property-details-card,
+.property-landlord-card {
+  padding: 25px;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 15px 38px rgba(15, 23, 42, 0.07);
+}
+
+/* =========================================================
+   Property Title
+========================================================= */
+
+.property-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.property-title-row > div:first-child > span {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.property-title-row h1 {
+  margin: 10px 0 8px;
+  color: #0f172a;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.property-title-row p {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.property-title-row p svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+  color: #2563eb;
+}
+
+.property-rating {
+  display: grid;
+  min-width: 110px;
+  place-items: center;
+  padding: 15px;
+  border-radius: 16px;
+  background: #fffbeb;
+  text-align: center;
+}
+
+.property-rating svg {
+  color: #f59e0b;
+  font-size: 18px;
+}
+
+.property-rating strong {
+  margin-top: 6px;
+  color: #0f172a;
+  font-size: 19px;
+}
+
+.property-rating span {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 8px;
+}
+
+/* =========================================================
+   Specification Grid
+========================================================= */
+
+.property-specification-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 24px;
+}
+
+.property-specification-grid > div {
+  padding: 14px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.property-specification-grid svg {
+  color: #2563eb;
+}
+
+.property-specification-grid span,
+.property-specification-grid strong {
+  display: block;
+}
+
+.property-specification-grid span {
+  margin-top: 8px;
+  color: #94a3b8;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.property-specification-grid strong {
+  margin-top: 5px;
+  color: #0f172a;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   About Property
+========================================================= */
+
+.property-details-card h2 {
+  margin: 0 0 16px;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.property-description {
+  margin: 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.property-information-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 20px;
+}
+
+.property-information-grid > div {
+  padding: 14px;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.property-information-grid span,
+.property-information-grid strong {
+  display: block;
+}
+
+.property-information-grid span {
+  color: #94a3b8;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.property-information-grid strong {
+  margin-top: 6px;
+  color: #0f172a;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Amenities
+========================================================= */
+
+.property-amenities-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.property-amenities-list span {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  color: #334155;
+  background: #eff6ff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.property-amenities-list svg {
+  color: #16a34a;
+}
+
+/* =========================================================
+   Landlord Card
+========================================================= */
+
+.property-landlord-card {
+  position: sticky;
+  top: 105px;
+}
+
+.property-landlord-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.property-landlord-heading > div {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  font-size: 20px;
+}
+
+.property-landlord-heading span,
+.property-landlord-heading strong {
+  display: block;
+}
+
+.property-landlord-heading span {
+  color: #64748b;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.property-landlord-heading strong {
+  margin-top: 5px;
+  color: #0f172a;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.property-verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 17px;
+  padding: 13px;
+  border: 1px solid #bbf7d0;
+  border-radius: 13px;
+  color: #15803d;
+  background: #f0fdf4;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.property-landlord-stats {
+  display: grid;
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.property-landlord-stats > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.property-landlord-stats span {
+  color: #64748b;
+  font-size: 9px;
+}
+
+.property-landlord-stats strong {
+  color: #0f172a;
+  font-size: 10px;
+}
+
+.property-landlord-card > p {
+  margin: 16px 0 0;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Modals
+========================================================= */
+
+.property-action-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 6000;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.property-action-modal {
+  position: relative;
+  display: grid;
+  width: min(520px, 100%);
+  gap: 15px;
+  padding: 27px;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 35px 90px rgba(15, 23, 42, 0.35);
+}
+
+.property-action-modal h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.property-action-modal > p {
+  margin: -7px 0 5px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.property-action-modal label {
+  display: grid;
+  gap: 8px;
+  color: #334155;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.property-action-modal input,
+.property-action-modal textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  outline: none;
+  color: #0f172a;
+  background: #ffffff;
+  font: inherit;
+}
+
+.property-action-modal input:focus,
+.property-action-modal textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.property-action-modal textarea {
+  resize: vertical;
+}
+
+.property-action-modal > button[type="submit"] {
+  min-height: 47px;
+  border: 0;
+  border-radius: 11px;
+  color: #ffffff;
+  background: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.property-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #334155;
+  background: #e2e8f0;
+  cursor: pointer;
+}
+
+/* =========================================================
+   Not Found
+========================================================= */
+
+.property-details-not-found {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 40px;
+  color: #64748b;
+  text-align: center;
+}
+
+.property-details-not-found > svg {
+  color: #2563eb;
+  font-size: 48px;
+}
+
+.property-details-not-found h2 {
+  margin: 14px 0 7px;
+  color: #0f172a;
+}
+
+.property-details-not-found p {
+  margin: 0 0 18px;
+}
+
+.property-details-not-found a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border-radius: 11px;
+  color: #ffffff;
+  background: #2563eb;
+  text-decoration: none;
+}
+
+/* =========================================================
+   Focus
+========================================================= */
+
+.property-details-page button:focus-visible,
+.property-details-page a:focus-visible,
+.property-details-page input:focus-visible,
+.property-details-page textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width: 1250px) {
+  .property-details-layout,
+  .property-details-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .property-booking-panel,
+  .property-landlord-card {
+    position: static;
+  }
+
+  .property-specification-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .property-main-image {
+    height: 440px;
+  }
+
+  .property-information-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .property-amenities-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .property-details-page {
+    padding: 20px 14px;
+  }
+
+  .property-details-topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .property-details-topbar button {
+    width: 100%;
+  }
+
+  .property-main-image {
+    height: 310px;
+    border-radius: 18px;
+  }
+
+  .property-thumbnail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .property-title-row {
+    flex-direction: column;
+  }
+
+  .property-rating {
+    width: 100%;
+  }
+
+  .property-specification-grid,
+  .property-information-grid,
+  .property-amenities-list {
+    grid-template-columns: 1fr;
+  }
+
+  .property-booking-panel,
+  .property-details-card,
+  .property-landlord-card {
+    padding: 19px;
+  }
+
+  .property-panel-rent {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-details-page {
+    padding: 15px 10px;
+  }
+
+  .property-main-image {
+    height: 245px;
+  }
+
+  .property-thumbnail-grid button {
+    height: 80px;
+  }
+
+  .property-title-row h1 {
+    font-size: 26px;
+  }
+
+  .property-action-modal {
+    padding: 22px 16px;
+  }
+}
+
+/* =========================================================
+   Property Status and Booking Lock
+========================================================= */
+
+.property-main-image {
+  position: relative;
+}
+
+.property-image-unavailable::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  border-radius: inherit;
+  background: rgba(15, 23, 42, 0.12);
+}
+
+.property-image-unavailable img {
+  filter: saturate(0.8);
+}
+
+.property-details-status-badge {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 3;
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: #166534;
+  background: rgba(220, 252, 231, 0.96);
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow:
+    0 9px 25px
+    rgba(15, 23, 42, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.property-details-status-badge.booking-request-received {
+  color: #92400e;
+  background: rgba(254, 243, 199, 0.96);
+}
+
+.property-details-status-badge.waiting-payment {
+  color: #1d4ed8;
+  background: rgba(219, 234, 254, 0.96);
+}
+
+.property-details-status-badge.booked,
+.property-details-status-badge.lease-active {
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.93);
+}
+
+.property-details-status-badge.lease-completed {
+  color: #475569;
+  background: rgba(226, 232, 240, 0.96);
+}
+
+.property-panel-current-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-bottom: 16px;
+  padding: 14px;
+  border: 1px solid #bbf7d0;
+  border-radius: 13px;
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.property-panel-current-status > svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+.property-panel-current-status strong,
+.property-panel-current-status span {
+  display: block;
+}
+
+.property-panel-current-status strong {
+  color: #166534;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.property-panel-current-status span {
+  margin-top: 4px;
+  color: #475569;
+  font-size: 8px;
+  line-height: 1.55;
+}
+
+.property-panel-current-status.booking-request-received {
+  border-color: #fde68a;
+  color: #b45309;
+  background: #fffbeb;
+}
+
+.property-panel-current-status.waiting-payment {
+  border-color: #bfdbfe;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.property-panel-current-status.booked,
+.property-panel-current-status.lease-active {
+  border-color: #cbd5e1;
+  color: #334155;
+  background: #f1f5f9;
+}
+
+.property-panel-current-status.lease-completed {
+  border-color: #cbd5e1;
+  color: #475569;
+  background: #f8fafc;
+}
+
+.property-action-disabled {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: not-allowed !important;
+  opacity: 0.58;
+  box-shadow: none !important;
+}
+
+.property-action-disabled:hover {
+  transform: none !important;
+}
+
+@media (max-width: 600px) {
+  .property-details-status-badge {
+    right: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 20px);
+    font-size: 7px;
+  }
+}

@@ -1,0 +1,1355 @@
+/* =========================================================
+   Landlord Maintenance Requests
+========================================================= */
+
+.landlord-maintenance-page {
+  min-height: 100vh;
+  padding: 32px;
+  color: #0f172a;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.1),
+      transparent 30%
+    ),
+    #f8fafc;
+}
+
+/* =========================================================
+   Header
+========================================================= */
+
+.landlord-maintenance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+  padding: 28px 30px;
+  border: 1px solid #dbeafe;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(239, 246, 255, 0.94)
+    );
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.landlord-maintenance-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.landlord-maintenance-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(31px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.landlord-maintenance-header p {
+  max-width: 720px;
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.landlord-maintenance-header-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 21px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  font-size: 25px;
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================================================
+   Summary Cards
+========================================================= */
+
+.maintenance-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.maintenance-summary-card {
+  min-height: 175px;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 21px;
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.maintenance-summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(37, 99, 235, 0.11);
+}
+
+.maintenance-summary-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.maintenance-summary-top > span {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.maintenance-summary-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 16px;
+  font-size: 19px;
+}
+
+.maintenance-summary-icon.total {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.maintenance-summary-icon.open {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.maintenance-summary-icon.progress {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.maintenance-summary-icon.resolved {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.maintenance-summary-card > strong {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.maintenance-summary-card > small {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* =========================================================
+   Urgent Banner
+========================================================= */
+
+.maintenance-urgent-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding: 17px 19px;
+  border: 1px solid #fecaca;
+  border-radius: 17px;
+  color: #dc2626;
+  background: #fef2f2;
+  box-shadow: 0 12px 28px rgba(220, 38, 38, 0.08);
+}
+
+.maintenance-urgent-banner > svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.maintenance-urgent-banner strong,
+.maintenance-urgent-banner span {
+  display: block;
+}
+
+.maintenance-urgent-banner strong {
+  font-size: 13px;
+}
+
+.maintenance-urgent-banner span {
+  margin-top: 4px;
+  color: #b91c1c;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   Content Container
+========================================================= */
+
+.landlord-maintenance-content {
+  padding-bottom: 24px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 23px;
+  background: #ffffff;
+  box-shadow: 0 17px 43px rgba(15, 23, 42, 0.07);
+}
+
+/* =========================================================
+   Toolbar
+========================================================= */
+
+.landlord-maintenance-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.maintenance-status-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.maintenance-status-tabs button {
+  min-height: 41px;
+  padding: 0 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  color: #475569;
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.maintenance-status-tabs button:hover {
+  border-color: #bfdbfe;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.maintenance-status-tabs button.active {
+  border-color: #2563eb;
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.maintenance-toolbar-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.maintenance-search {
+  display: flex;
+  width: 300px;
+  min-height: 46px;
+  align-items: center;
+  gap: 9px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  color: #64748b;
+  background: #f8fafc;
+}
+
+.maintenance-search:focus-within {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.maintenance-search input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  color: #0f172a;
+  background: transparent;
+  font-size: 12px;
+}
+
+.maintenance-search input::placeholder {
+  color: #94a3b8;
+}
+
+.maintenance-toolbar-controls select,
+.maintenance-reset-button {
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  color: #475569;
+  background: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.maintenance-toolbar-controls select:focus {
+  border-color: #60a5fa;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.maintenance-reset-button {
+  cursor: pointer;
+}
+
+.maintenance-reset-button:hover {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+/* =========================================================
+   Results Heading
+========================================================= */
+
+.maintenance-result-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px 5px;
+}
+
+.maintenance-result-heading span {
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.maintenance-result-heading h2 {
+  margin: 5px 0 0;
+  font-size: 21px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.maintenance-result-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* =========================================================
+   Request Grid
+========================================================= */
+
+.maintenance-request-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 21px;
+  padding: 20px 24px;
+}
+
+.maintenance-request-card {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.07);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.maintenance-request-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 46px rgba(37, 99, 235, 0.12);
+}
+
+.maintenance-request-card.priority-urgent {
+  border-color: #fca5a5;
+  box-shadow:
+    inset 0 4px 0 #dc2626,
+    0 14px 35px rgba(15, 23, 42, 0.07);
+}
+
+.maintenance-request-card.priority-high {
+  border-color: #fed7aa;
+  box-shadow:
+    inset 0 4px 0 #f97316,
+    0 14px 35px rgba(15, 23, 42, 0.07);
+}
+
+/* =========================================================
+   Property Image
+========================================================= */
+
+.maintenance-property-image {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+}
+
+.maintenance-property-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.maintenance-request-card:hover
+  .maintenance-property-image img {
+  transform: scale(1.04);
+}
+
+.maintenance-status,
+.maintenance-priority {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.maintenance-status {
+  top: 14px;
+  right: 14px;
+}
+
+.maintenance-priority {
+  top: 14px;
+  left: 14px;
+}
+
+.maintenance-status.open {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.maintenance-status.in_progress {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.maintenance-status.resolved {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.maintenance-priority.low {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.maintenance-priority.medium {
+  color: #2563eb;
+  background: #dbeafe;
+}
+
+.maintenance-priority.high {
+  color: #c2410c;
+  background: #ffedd5;
+}
+
+.maintenance-priority.urgent {
+  color: #ffffff;
+  background: #dc2626;
+}
+
+/* =========================================================
+   Card Body
+========================================================= */
+
+.maintenance-request-body {
+  padding: 20px;
+}
+
+.maintenance-request-reference {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.maintenance-request-reference > span:first-child {
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.maintenance-request-reference > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #7c3aed;
+  background: #f3e8ff;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.maintenance-request-body h3 {
+  margin: 10px 0 7px;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.maintenance-property-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 0;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.maintenance-property-location svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: #2563eb;
+}
+
+.maintenance-description-preview {
+  display: -webkit-box;
+  margin: 15px 0;
+  overflow: hidden;
+  color: #475569;
+  font-size: 10px;
+  line-height: 1.6;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* =========================================================
+   Tenant and Dates
+========================================================= */
+
+.maintenance-tenant-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.maintenance-tenant-row > div {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+}
+
+.maintenance-tenant-row span,
+.maintenance-tenant-row strong {
+  display: block;
+}
+
+.maintenance-tenant-row span {
+  color: #94a3b8;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.maintenance-tenant-row strong {
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 11px;
+}
+
+.maintenance-date-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.maintenance-date-grid div {
+  padding: 11px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.maintenance-date-grid span,
+.maintenance-date-grid strong {
+  display: block;
+}
+
+.maintenance-date-grid span {
+  color: #94a3b8;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.maintenance-date-grid strong {
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 9px;
+}
+
+/* =========================================================
+   Resolution Preview
+========================================================= */
+
+.maintenance-resolution-preview {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.maintenance-resolution-preview > svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.maintenance-resolution-preview strong {
+  font-size: 9px;
+}
+
+.maintenance-resolution-preview p {
+  margin: 4px 0 0;
+  color: #166534;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.maintenance-view-button {
+  display: inline-flex;
+  width: 100%;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 11px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.maintenance-view-button:hover {
+  transform: translateY(-2px);
+  background: #dbeafe;
+}
+
+/* =========================================================
+   Empty State
+========================================================= */
+
+.maintenance-empty-state {
+  grid-column: 1 / -1;
+  padding: 64px 20px;
+  color: #64748b;
+  text-align: center;
+}
+
+.maintenance-empty-state > svg {
+  color: #2563eb;
+  font-size: 42px;
+}
+
+.maintenance-empty-state h3 {
+  margin: 13px 0 7px;
+  color: #0f172a;
+}
+
+.maintenance-empty-state p {
+  margin: 0 0 18px;
+}
+
+.maintenance-empty-state button {
+  min-height: 42px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 11px;
+  color: #2563eb;
+  background: #eff6ff;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* =========================================================
+   Modal
+========================================================= */
+
+.maintenance-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5600;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  overflow-y: auto;
+  background: rgba(15, 23, 42, 0.76);
+  backdrop-filter: blur(8px);
+}
+
+.maintenance-modal {
+  position: relative;
+  width: min(940px, 100%);
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  border-radius: 25px;
+  background: #ffffff;
+  box-shadow: 0 35px 90px rgba(15, 23, 42, 0.35);
+}
+
+.maintenance-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 5;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #0f172a;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.maintenance-modal-header {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.maintenance-modal-header > img {
+  width: 150px;
+  height: 110px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.maintenance-modal-reference {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.maintenance-modal-reference > span:first-child {
+  color: #2563eb;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.maintenance-modal-reference > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #7c3aed;
+  background: #f3e8ff;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.maintenance-modal-header h2 {
+  margin: 8px 0 6px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.maintenance-modal-header p {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin: 0;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.maintenance-modal-header p svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.maintenance-modal-badges {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.maintenance-modal-badges
+  .maintenance-status,
+.maintenance-modal-badges
+  .maintenance-priority {
+  position: static;
+}
+
+.maintenance-modal-body {
+  padding: 25px;
+}
+
+/* =========================================================
+   Tenant Card
+========================================================= */
+
+.maintenance-tenant-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  background: #f8fafc;
+}
+
+.maintenance-tenant-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+}
+
+.maintenance-tenant-card span {
+  color: #64748b;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.maintenance-tenant-card h3 {
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.maintenance-tenant-card p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 4px 0;
+  color: #64748b;
+  font-size: 10px;
+}
+
+/* =========================================================
+   Detail Grid
+========================================================= */
+
+.maintenance-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.maintenance-detail-grid div {
+  padding: 14px;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.maintenance-detail-grid svg {
+  color: #2563eb;
+}
+
+.maintenance-detail-grid span,
+.maintenance-detail-grid strong {
+  display: block;
+}
+
+.maintenance-detail-grid span {
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.maintenance-detail-grid strong {
+  margin-top: 5px;
+  color: #0f172a;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   Description and Resolution Form
+========================================================= */
+
+.maintenance-description-section,
+.maintenance-resolution-form {
+  margin-top: 22px;
+}
+
+.maintenance-description-section h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.maintenance-description-section p {
+  margin: 0;
+  padding: 15px;
+  border-radius: 13px;
+  color: #475569;
+  background: #f8fafc;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.maintenance-resolution-form {
+  display: grid;
+  gap: 8px;
+}
+
+.maintenance-resolution-form label {
+  color: #334155;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.maintenance-resolution-form textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.maintenance-resolution-form textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   Resolved Box
+========================================================= */
+
+.maintenance-resolved-box {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  color: #15803d;
+  background: #f0fdf4;
+}
+
+.maintenance-resolved-box > svg {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.maintenance-resolved-box strong,
+.maintenance-resolved-box span {
+  display: block;
+}
+
+.maintenance-resolved-box p {
+  margin: 5px 0;
+  color: #166534;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.maintenance-resolved-box span {
+  color: #15803d;
+  font-size: 9px;
+}
+
+/* =========================================================
+   Modal Actions
+========================================================= */
+
+.maintenance-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 11px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.maintenance-modal-actions button {
+  display: inline-flex;
+  min-width: 160px;
+  min-height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.maintenance-modal-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.maintenance-start-action {
+  color: #ffffff;
+  background: #f59e0b;
+}
+
+.maintenance-resolve-action {
+  color: #ffffff;
+  background: #22c55e;
+}
+
+.maintenance-dismiss-action {
+  color: #334155;
+  background: #e2e8f0;
+}
+
+/* =========================================================
+   Focus
+========================================================= */
+
+.landlord-maintenance-page button:focus-visible,
+.landlord-maintenance-page input:focus-visible,
+.landlord-maintenance-page select:focus-visible,
+.landlord-maintenance-page textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+}
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+@media (max-width: 1250px) {
+  .maintenance-summary-grid,
+  .maintenance-request-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .landlord-maintenance-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .maintenance-toolbar-controls {
+    width: 100%;
+  }
+
+  .maintenance-search {
+    flex: 1;
+    width: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .maintenance-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .landlord-maintenance-page {
+    padding: 18px 14px;
+  }
+
+  .landlord-maintenance-header {
+    align-items: flex-start;
+    padding: 22px 18px;
+    border-radius: 19px;
+  }
+
+  .landlord-maintenance-header-icon {
+    display: none;
+  }
+
+  .maintenance-summary-grid,
+  .maintenance-request-grid,
+  .maintenance-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maintenance-toolbar-controls {
+    flex-direction: column;
+  }
+
+  .maintenance-search {
+    width: 100%;
+  }
+
+  .maintenance-result-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .maintenance-modal-header {
+    grid-template-columns: 1fr;
+  }
+
+  .maintenance-modal-header > img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .maintenance-modal-badges {
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .maintenance-modal-actions {
+    flex-direction: column;
+  }
+
+  .maintenance-modal-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .landlord-maintenance-page {
+    padding: 14px 10px;
+  }
+
+  .landlord-maintenance-header h1 {
+    font-size: 29px;
+  }
+
+  .maintenance-request-grid {
+    padding: 18px 12px;
+  }
+
+  .maintenance-date-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maintenance-modal-body {
+    padding: 20px 16px;
+  }
+
+  .maintenance-tenant-card {
+    align-items: flex-start;
+  }
+}
+
+/* =========================================================
+   Tenant Maintenance Integration
+========================================================= */
+
+.maintenance-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.maintenance-status.pending {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.maintenance-status.in-progress {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.maintenance-status.resolved {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.maintenance-status.rejected,
+.maintenance-status.cancelled {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.maintenance-summary-icon.rejected {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.maintenance-property-image-placeholder,
+.maintenance-modal-image-placeholder {
+  display: grid;
+  place-items: center;
+  color: #94a3b8;
+  background: #e2e8f0;
+  font-size: 42px;
+}
+
+.maintenance-property-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+}
+
+.maintenance-modal-image-placeholder {
+  width: 145px;
+  height: 105px;
+  border-radius: 14px;
+}
+
+.maintenance-assigned-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 11px;
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.maintenance-assigned-preview span,
+.maintenance-assigned-preview strong {
+  display: block;
+}
+
+.maintenance-assigned-preview span {
+  color: #64748b;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.maintenance-assigned-preview strong {
+  margin-top: 4px;
+  color: #1e3a8a;
+  font-size: 10px;
+}
+
+.maintenance-assignment-form {
+  margin-top: 18px;
+  padding: 17px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.maintenance-assignment-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #334155;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.maintenance-assignment-form input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  outline: none;
+  background: #ffffff;
+}
+
+.maintenance-assignment-form input:focus {
+  border-color: #60a5fa;
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.1);
+}
+
+.maintenance-issue-image-section {
+  margin-top: 18px;
+  padding: 17px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.maintenance-issue-image-section h3 {
+  margin: 0 0 12px;
+}
+
+.maintenance-issue-image-section img {
+  width: 100%;
+  max-height: 360px;
+  border-radius: 13px;
+  object-fit: cover;
+}
+
+.maintenance-rejected-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #fecaca;
+  border-radius: 14px;
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.maintenance-rejected-box p {
+  margin: 5px 0 0;
+  color: #7f1d1d;
+}
+
+.maintenance-reject-action {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.maintenance-modal-actions button {
+  min-width: 140px;
+}
+
+@media (max-width: 700px) {
+  .maintenance-modal-image-placeholder {
+    width: 100%;
+    height: 210px;
+  }
+
+  .maintenance-modal-actions {
+    flex-direction: column;
+  }
+
+  .maintenance-modal-actions button {
+    width: 100%;
+  }
+}
